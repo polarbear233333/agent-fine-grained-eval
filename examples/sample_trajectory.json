@@ -1,0 +1,41 @@
+{
+  "instance_id": "demo__repo-1",
+  "status": "completed",
+  "steps": [
+    {
+      "turn_id": 0,
+      "role": "assistant",
+      "thought": "Plan:\n1. Reproduce the issue with the smallest failing test.\n2. Locate the relevant function using grep and inspect the call path.\n3. Modify the implementation.\n4. Rerun the failing test and related regression tests.",
+      "action": null,
+      "observation": ""
+    },
+    {
+      "turn_id": 1,
+      "role": "assistant",
+      "thought": "I will reproduce first.",
+      "action": {"type": "shell", "command": "pytest tests/test_core.py"},
+      "observation": "1 failed"
+    },
+    {
+      "turn_id": 2,
+      "role": "assistant",
+      "thought": "Now locate the implementation.",
+      "action": {"type": "shell", "command": "grep -R \"target_function\" -n src tests"},
+      "observation": "src/pkg/core.py:12"
+    },
+    {
+      "turn_id": 3,
+      "role": "assistant",
+      "thought": "Patch the faulty branch.",
+      "action": {"type": "edit", "file": "src/pkg/core.py"},
+      "observation": "patched"
+    },
+    {
+      "turn_id": 4,
+      "role": "assistant",
+      "thought": "Verify the fix.",
+      "action": {"type": "shell", "command": "pytest tests/test_core.py"},
+      "observation": "2 passed"
+    }
+  ]
+}

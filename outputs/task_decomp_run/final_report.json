@@ -1,0 +1,53 @@
+{
+  "case_count": 1,
+  "cases": [
+    {
+      "instance_id": "demo__repo-1",
+      "slice_count": 1,
+      "metrics": {
+        "pqs": 5.0,
+        "pqs_normalized": 1.0,
+        "par": 1.0,
+        "prq": 1.0,
+        "ee": 0.8,
+        "final_score": 0.98,
+        "final_score_5pt": 4.9
+      },
+      "slices": [
+        {
+          "task_decomposition_id": 1,
+          "start_turn": 0,
+          "end_turn": 4,
+          "planning_text": "Plan:\n1. Reproduce the reported issue with a focused test.\n2. Locate the related function using search.\n3. Modify the implementation.\n4. Run the failing test and related regression tests to verify.",
+          "execution_text": "[turn 1] thought=I will first reproduce the issue.\naction={'type': 'shell', 'command': 'pytest tests/test_bug.py'}\nobservation=1 failed\n\n[turn 2] thought=Now I need to locate the relevant code path.\naction={'type': 'shell', 'command': 'grep -R \"target_function\" -n src tests'}\nobservation=src/pkg/core.py:10\n\n[turn 3] thought=The previous assumption seems correct; I will patch the implementation.\naction={'type': 'edit', 'file': 'src/pkg/core.py'}\nobservation=patched\n\n[turn 4] thought=Now verify the fix and run related tests.\naction={'type': 'shell', 'command': 'pytest tests/test_bug.py tests/test_core.py'}\nobservation=2 passed",
+          "revision_text": "The previous assumption seems correct; I will patch the implementation.\nedit src/pkg/core.py\npatched",
+          "completion_reason": "verification_or_completion_detected",
+          "step_ids": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "judge": {
+            "score": 5,
+            "classification_label": "Advanced Planning",
+            "reasoning": "Heuristic offline judge based on stage coverage, structured planning, and revision evidence. Use openai_compatible provider for final experiments.",
+            "covered_stages": {
+              "reproduction": true,
+              "localization": true,
+              "modification": true,
+              "verification": true
+            },
+            "aligned_steps": 4,
+            "total_executed_steps": 4,
+            "reasonable_revisions": 1,
+            "total_revisions": 1,
+            "efficiency_score": 0.8,
+            "evidence": []
+          }
+        }
+      ]
+    }
+  ]
+}

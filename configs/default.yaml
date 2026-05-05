@@ -1,0 +1,24 @@
+run:
+  max_cases: 3
+  output_dir: outputs/task_decomp_run
+  save_intermediate: true
+
+dataset:
+  source: local_jsonl   # local_jsonl | swebench
+  local_path: examples/sample_cases.jsonl
+  hf_name: princeton-nlp/SWE-bench_Lite
+  split: test
+
+sii:
+  mode: mock            # mock | http
+  endpoint: /run
+  timeout_sec: 600
+
+judge:
+  provider: heuristic        # heuristic | openai_compatible
+  temperature: 0
+  max_retries: 3
+  max_chars_per_slice: 18000
+
+rubric:
+  path: configs/rubric.task_decomp.yaml

@@ -1,0 +1,29 @@
+name: context_engineering
+version: 0.1
+tracks:
+  - context_management
+  - budgeted_patch
+  - long_horizon
+metrics:
+  hard_pcu_recall:
+    description: memory + keep + summary cover Hard PCUs under budget
+  soft_pcu_recall:
+    description: memory + keep + summary cover Soft PCUs
+  context_bloat_ratio:
+    description: retained tokens / minimal tokens covering hard PCUs
+  memory_utilization:
+    description: used memory slots / available memory slots
+  delayed_recall_accuracy:
+    description: whether PCUs are recalled after K noisy turns
+  conflict_resolution_accuracy:
+    description: whether the agent prefers the true Hard PCU over conflicting noise
+  noise_resistance_score:
+    description: robustness of Hard PCU recall under noise
+  actionable_recall_score:
+    description: retained information affects actions or patch semantics
+aggregation_weights:
+  hard_pcu_recall: 0.35
+  soft_pcu_recall: 0.15
+  context_efficiency: 0.15
+  delayed_recall_accuracy: 0.15
+  actionable_recall_score: 0.20

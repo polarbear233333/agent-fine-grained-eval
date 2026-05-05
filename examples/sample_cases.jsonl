@@ -1,0 +1,1 @@
+{"instance_id":"demo__repo-1","repo":"demo/repo","base_commit":"abc123","problem_statement":"A function returns the wrong value for edge cases. Please fix the bug and add verification.","hints_text":"Focus on src/pkg/core.py"}

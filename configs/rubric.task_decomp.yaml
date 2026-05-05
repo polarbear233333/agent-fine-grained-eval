@@ -1,0 +1,61 @@
+name: task_decomposition
+version: 0.1
+
+planning_triggers:
+  strong:
+    - "plan:"
+    - "steps:"
+    - "todo:"
+    - "task list"
+    - "I will first"
+    - "I'll first"
+    - "first, I"
+  revision:
+    - "revise my plan"
+    - "new plan"
+    - "previous assumption"
+    - "instead, I should"
+    - "need to adjust"
+    - "change strategy"
+
+engineering_stages:
+  reproduction:
+    - "reproduce"
+    - "replicate"
+    - "run test"
+    - "pytest"
+    - "failing test"
+    - "confirm the bug"
+  localization:
+    - "locate"
+    - "inspect"
+    - "grep"
+    - "search"
+    - "find relevant"
+    - "trace"
+  modification:
+    - "modify"
+    - "patch"
+    - "fix"
+    - "edit"
+    - "implement"
+  verification:
+    - "verify"
+    - "rerun"
+    - "test again"
+    - "regression"
+    - "all tests"
+
+score_labels:
+  0: "No Task Decomposition"
+  1: "Weak Decomposition"
+  2: "Partial Decomposition"
+  3: "Reasonable Decomposition"
+  4: "Systematic Decomposition"
+  5: "Advanced Planning"
+
+aggregation_weights:
+  pqs: 0.4
+  par: 0.3
+  prq: 0.2
+  ee: 0.1
