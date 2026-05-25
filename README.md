@@ -410,8 +410,4 @@ python scripts/merge_reports.py
 - PCU generation in this repo is a practical bootstrap implementation. For strict benchmark construction, PCUs should be refined with ablation validation or human review.
 - Context Engineering and Task Decomposition are intentionally separated in data conversion, but merged at the final reporting layer.
 
----
 
-## 11. License
-
-MIT License. Replace this section with your lab/project license if needed.
