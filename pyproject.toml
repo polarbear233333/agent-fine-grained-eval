@@ -21,5 +21,8 @@ dependencies = [
 swebench = ["datasets>=2.18"]
 dev = ["pytest>=8.0", "ruff>=0.4"]
 
+[project.scripts]
+pcu-bench = "agent_eval.runner:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]

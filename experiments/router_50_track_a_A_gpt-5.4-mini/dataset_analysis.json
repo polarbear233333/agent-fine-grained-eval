@@ -1,0 +1,15 @@
+{
+  "case_count": 50,
+  "source_counts": {
+    "issue": 50,
+    "logs": 147,
+    "snippets": 200,
+    "patch": 46
+  },
+  "pcu_counts": {
+    "hard": 86,
+    "soft": 249
+  },
+  "trajectory_success_known": 50,
+  "trajectory_success_rate": 0.6
+}

@@ -1,0 +1,28 @@
+run:
+  max_cases: 50
+  output_root: experiments
+  runner_mode: skip
+
+dataset:
+  source: trajectories
+  local_paths:
+    - data/glm-think-claude_1_it1_final_data.json
+  hf_name: princeton-nlp/SWE-bench_Verified
+  split: test
+
+benchmark:
+  track: A
+  max_visible_tokens: 8192
+  memory_slots: 8
+  seed: 42
+  noise_turns:
+
+agent:
+  provider: heuristic
+  model: heuristic
+
+pcu:
+  ablation_mode: offline_proxy
+  hard_delta_threshold: 0.35
+  soft_delta_threshold: 0.15
+

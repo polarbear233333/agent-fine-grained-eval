@@ -1,0 +1,22 @@
+{
+  "track": "A",
+  "model": "heuristic",
+  "agent_provider": "heuristic",
+  "dataset": "trajectories",
+  "input": [
+    "data\\glm-think-claude_1_it1_final_data.json"
+  ],
+  "hf_name": null,
+  "split": "test",
+  "max_cases": 50,
+  "max_visible_tokens": 8192,
+  "memory_slots": 8,
+  "noise_turns": null,
+  "seed": 42,
+  "output_root": "experiments",
+  "run_name": "local_50_track_a_nonoracle",
+  "build_only": false,
+  "runner_mode": "skip",
+  "keep_worktree": false,
+  "test_command": null
+}

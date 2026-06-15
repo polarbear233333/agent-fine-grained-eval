@@ -1,0 +1,16 @@
+# Raw local trajectories can be hundreds of MB. Keep them out of Git.
+data/*.json
+data/*.jsonl
+
+# Temporary local runners and caches.
+.pytest_cache/
+__pycache__/
+*.pyc
+worktrees/
+tmp/
+temp/
+
+# Virtual environments.
+.venv/
+venv/
+
