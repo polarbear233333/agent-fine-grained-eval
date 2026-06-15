@@ -126,8 +126,6 @@ def run_experiment(args: argparse.Namespace) -> Path:
                 runner_result = swe_runner.run(case, final_patch, test_command=args.test_command)
                 task_success = runner_result.status == "pass"
                 logger.log("swe_runner", case.instance_id, {"runner_result": runner_result.model_dump()})
-            elif isinstance(case.metadata.get("trajectory_success"), bool):
-                task_success = bool(case.metadata["trajectory_success"])
 
         case_metrics = evaluator.score_case(
             case=case,

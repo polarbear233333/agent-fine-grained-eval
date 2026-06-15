@@ -151,16 +151,35 @@ class OpenAICompatibleContextAgent(BaseAgent):
                 "final_patch": "diff --git ... optional for Track B/C",
             },
         }
-        resp = self.client.chat.completions.create(
-            model=self.model,
-            temperature=0,
-            messages=[
-                {"role": "system", "content": "You are a software-engineering benchmark agent. Return JSON only."},
-                {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
-            ],
-            response_format={"type": "json_object"},
-        )
-        return json.loads(resp.choices[0].message.content or "{}")
+        messages = [
+            {"role": "system", "content": "You are a software-engineering benchmark agent. Return valid JSON only. Do not use markdown."},
+            {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
+        ]
+        last_error = None
+        for attempt in range(3):
+            resp = self.client.chat.completions.create(
+                model=self.model,
+                temperature=0,
+                messages=messages,
+                response_format={"type": "json_object"},
+            )
+            content = resp.choices[0].message.content or "{}"
+            try:
+                return parse_json_object(content)
+            except json.JSONDecodeError as exc:
+                last_error = exc
+                messages.append({"role": "assistant", "content": truncate_text(content, 4000)})
+                messages.append(
+                    {
+                        "role": "user",
+                        "content": (
+                            "The previous response was not valid JSON. "
+                            "Return only one JSON object matching the requested schema. "
+                            "No markdown, comments, or trailing prose."
+                        ),
+                    }
+                )
+        raise ValueError(f"Model {self.model} did not return valid JSON after retries: {last_error}")
 
 
 def make_agent(provider: str, model: str) -> BaseAgent:
@@ -169,3 +188,21 @@ def make_agent(provider: str, model: str) -> BaseAgent:
     if provider in {"openai", "openai_compatible"}:
         return OpenAICompatibleContextAgent(model=model)
     raise ValueError(f"Unsupported agent provider: {provider}")
+
+
+def parse_json_object(content: str) -> dict[str, Any]:
+    text = content.strip()
+    if text.startswith("```"):
+        text = re.sub(r"^```(?:json)?\s*", "", text, flags=re.I)
+        text = re.sub(r"\s*```$", "", text)
+    try:
+        obj = json.loads(text)
+    except json.JSONDecodeError:
+        start = text.find("{")
+        end = text.rfind("}")
+        if start < 0 or end <= start:
+            raise
+        obj = json.loads(text[start : end + 1])
+    if not isinstance(obj, dict):
+        raise json.JSONDecodeError("Expected a JSON object", text, 0)
+    return obj

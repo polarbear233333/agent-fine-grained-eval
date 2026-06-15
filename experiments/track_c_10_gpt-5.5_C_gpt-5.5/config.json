@@ -1,0 +1,22 @@
+{
+  "track": "C",
+  "model": "gpt-5.5",
+  "agent_provider": "openai_compatible",
+  "dataset": "trajectories",
+  "input": [
+    "data\\glm-think-claude_1_it1_final_data.json"
+  ],
+  "hf_name": null,
+  "split": "test",
+  "max_cases": 10,
+  "max_visible_tokens": 8192,
+  "memory_slots": 8,
+  "noise_turns": null,
+  "seed": 42,
+  "output_root": "experiments",
+  "run_name": "track_c_10_gpt-5.5",
+  "build_only": false,
+  "runner_mode": "skip",
+  "keep_worktree": false,
+  "test_command": null
+}
