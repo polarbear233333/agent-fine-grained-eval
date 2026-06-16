@@ -5,6 +5,7 @@ import re
 from pathlib import Path
 from typing import Any, Iterator
 
+from .llm_pcu_engine import HybridPCUEngine, LLMPCUEngine
 from .pcu_engine import PCUEngine
 from .schema import BenchmarkCase, ContextBudget, ContextSource, InteractionTurn, TrackName
 from .utils import (
@@ -39,13 +40,25 @@ class DatasetBuilder:
         memory_slots: int = 8,
         noise_turns: int | None = None,
         seed: int = 42,
+        pcu_mode: str = "heuristic",
+        pcu_model: str = "gpt-5.4-mini",
     ):
         self.track: TrackName = TRACK_ALIASES.get(track, track)  # type: ignore[assignment]
         self.max_visible_tokens = max_visible_tokens
         self.memory_slots = memory_slots
         self.noise_turns = noise_turns
         self.seed = seed
-        self.pcu_engine = PCUEngine()
+        heuristic_engine = PCUEngine()
+        if pcu_mode == "heuristic":
+            self.pcu_engine = heuristic_engine
+        elif pcu_mode == "llm":
+            self.pcu_engine = LLMPCUEngine(model=pcu_model, fallback=heuristic_engine)
+        elif pcu_mode == "hybrid":
+            self.pcu_engine = HybridPCUEngine(LLMPCUEngine(model=pcu_model, fallback=heuristic_engine), heuristic_engine)
+        else:
+            raise ValueError(f"Unsupported pcu_mode: {pcu_mode}")
+        self.pcu_mode = pcu_mode
+        self.pcu_model = pcu_model
 
     def iter_rows(
         self,
@@ -76,11 +89,13 @@ class DatasetBuilder:
             except ImportError as exc:
                 raise RuntimeError("Install datasets to load SWE-bench from Hugging Face: pip install -e .[swebench]") from exc
             if dataset == "swebench_verified":
-                name = hf_name or "princeton-nlp/SWE-bench_Verified"
+                name = hf_name or "SWE-bench/SWE-bench_Verified"
             elif dataset == "swepro":
-                name = hf_name or "SWE-bench/SWE-bench_Pro"
+                name = hf_name or "ScaleAI/SWE-bench_Pro"
+            elif dataset == "swebench":
+                name = hf_name or "SWE-bench/SWE-bench"
             else:
-                name = hf_name or "princeton-nlp/SWE-bench_Lite"
+                name = hf_name or "SWE-bench/SWE-bench_Lite"
             ds = load_dataset(name, split=split)
             for idx, row in enumerate(ds):
                 if max_cases is not None and idx >= max_cases:
@@ -119,6 +134,8 @@ class DatasetBuilder:
                 "trajectory_success": normalized.get("success"),
                 "observed_final_patch": normalized.get("observed_final_patch", ""),
                 "detected_paths": normalized.get("detected_paths", []),
+                "pcu_mode": self.pcu_mode,
+                "pcu_model": self.pcu_model if self.pcu_mode in {"llm", "hybrid"} else None,
             },
             task={
                 "problem_statement": normalized.get("problem_statement", ""),
@@ -134,6 +151,7 @@ class DatasetBuilder:
                 "track": self.track,
                 "task_success_required": self.track in {"budgeted_patch", "long_horizon"},
                 "pcu_required_shape": [pcu.required_shape() for pcu in pcus],
+                "pcu_mode": self.pcu_mode,
             },
         )
 
@@ -157,6 +175,9 @@ class DatasetBuilder:
             count += 1
         return count
 
+    def pcu_response_records(self) -> list[dict[str, Any]]:
+        return list(getattr(self.pcu_engine, "response_records", []))
+
 
 def normalize_case(row: dict[str, Any]) -> dict[str, Any]:
     messages = row.get("messages") or []
@@ -169,15 +190,19 @@ def normalize_case(row: dict[str, Any]) -> dict[str, Any]:
     problem = first_nonempty(
         [
             row.get("problem_statement"),
+            row.get("problem"),
             row.get("issue"),
+            row.get("issue_text"),
+            row.get("description"),
+            row.get("pr_description"),
             row.get("prompt"),
             extract_pr_description(first_user),
         ]
     )
     instance_id = first_nonempty([row.get("instance_id"), row.get("sample_name"), row.get("id")], default=stable_id("case", problem))
     repo = row.get("repo") or infer_repo_from_instance_id(instance_id)
-    patch = first_nonempty([row.get("patch"), row.get("gold_patch"), row.get("reference_patch")])
-    test_patch = first_nonempty([row.get("test_patch"), row.get("tests")])
+    patch = first_nonempty([row.get("patch"), row.get("gold_patch"), row.get("reference_patch"), row.get("solution_patch")])
+    test_patch = first_nonempty([row.get("test_patch"), row.get("tests"), row.get("test_diff"), row.get("fail_to_pass")])
     trajectory_info = extract_trajectory_info(messages)
     return {
         "instance_id": instance_id,
@@ -185,6 +210,9 @@ def normalize_case(row: dict[str, Any]) -> dict[str, Any]:
         "base_commit": row.get("base_commit") or row.get("commit") or "",
         "problem_statement": problem,
         "hints_text": first_nonempty([row.get("hints_text"), row.get("hints"), row.get("discussion")]),
+        "created_at": row.get("created_at") or row.get("created"),
+        "version": row.get("version"),
+        "environment_setup_commit": row.get("environment_setup_commit"),
         "patch": patch,
         "test_patch": test_patch,
         "success": row.get("success"),

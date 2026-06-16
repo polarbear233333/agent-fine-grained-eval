@@ -1,6 +1,8 @@
+from agent_eval.ablation_runner import AblationRunner, mask_case_sources
 from agent_eval.context_manager import ContextManager
 from agent_eval.dataset_builder import DatasetBuilder
 from agent_eval.evaluation_engine import EvaluationEngine
+from agent_eval.llm_pcu_engine import ground_quote_to_span
 from agent_eval.schema import BenchmarkCase, ContextBudget, ContextSource, PCU, SourceSpan
 
 
@@ -69,3 +71,43 @@ def test_evaluation_scores_pcu_recall():
     metrics = EvaluationEngine().score_case(case, {"context_plan": {"keep": ["issue-1"]}}, state)
     assert metrics.hard_pcu_recall == 1.0
 
+
+def test_ground_quote_to_span_maps_model_evidence_to_offsets():
+    source = ContextSource(
+        ref_id="issue-1",
+        source="issue",
+        text="The renderer should preserve raw HTML when autoescape is disabled.",
+        token_count=10,
+    )
+    span = ground_quote_to_span(
+        "should preserve raw HTML",
+        "issue",
+        "issue-1",
+        [source],
+        {"issue-1": source},
+        {"issue": [source]},
+    )
+    assert span is not None
+    assert span.source == "issue"
+    assert source.text[span.start : span.end] == "should preserve raw HTML"
+
+
+def test_ablation_masks_pcu_span():
+    case = BenchmarkCase(
+        instance_id="x",
+        context_sources=[
+            ContextSource(ref_id="issue-1", source="issue", text="A should do B.", token_count=4),
+        ],
+        pcus=[
+            PCU(
+                pcu_id="PCU-1",
+                necessity="hard",
+                source_spans=[SourceSpan(source="issue", ref_id="issue-1", start=2, end=13)],
+                expected_patch_effect="Do B.",
+            )
+        ],
+    )
+    masked = mask_case_sources(case.context_sources, case.pcus[0])
+    assert masked[0].text == "A [MASKED_PCU]."
+    result = AblationRunner(solver_mode="proxy").run_pcu(case, case.pcus[0])
+    assert result["full"]["success_score"] > result["masked"]["success_score"]

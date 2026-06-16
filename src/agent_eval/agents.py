@@ -8,6 +8,8 @@ from typing import Any
 from .schema import BenchmarkCase
 from .utils import keyword_set, truncate_text
 
+AGENT_PROMPT_VERSION = "context-agent-v1"
+
 
 class BaseAgent:
     def run(self, case: BenchmarkCase) -> dict[str, Any]:
@@ -129,6 +131,7 @@ class OpenAICompatibleContextAgent(BaseAgent):
             or os.getenv("API_BASE")
             or os.getenv("JUDGE_BASE_URL")
             or None,
+            timeout=float(os.getenv("OPENAI_TIMEOUT_SEC", "120")),
         )
         self.model = model
 
@@ -165,7 +168,17 @@ class OpenAICompatibleContextAgent(BaseAgent):
             )
             content = resp.choices[0].message.content or "{}"
             try:
-                return parse_json_object(content)
+                obj = parse_json_object(content)
+                obj.setdefault("_meta", {})
+                obj["_meta"].update(
+                    {
+                        "model": self.model,
+                        "response_id": getattr(resp, "id", None),
+                        "prompt_version": AGENT_PROMPT_VERSION,
+                        "attempt": attempt + 1,
+                    }
+                )
+                return obj
             except json.JSONDecodeError as exc:
                 last_error = exc
                 messages.append({"role": "assistant", "content": truncate_text(content, 4000)})

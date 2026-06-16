@@ -1,0 +1,58 @@
+{
+  "summary": {
+    "ablation_count": 1,
+    "annotated_counts": {
+      "hard": 1
+    },
+    "inferred_counts": {
+      "soft": 1
+    },
+    "mean_success_delta": 0.04,
+    "necessity_agreement": 0.0
+  },
+  "results": [
+    {
+      "instance_id": "instance_NodeBB__NodeBB-04998908ba6721d64eba79ae3b65a351dcfbc5b5-vnan",
+      "pcu_id": "pcu_acp_status_labels",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "soft",
+      "pcu_source": "issue",
+      "expected_patch_effect": "ACP user data must carry enough state for the UI to render validated, pending, expired, and missing email statuses.",
+      "solver_mode": "llm_proxy",
+      "full": {
+        "success_score": 0.48,
+        "plan": {
+          "key_facts": [
+            "Email confirmation currently depends on key TTL/expiration, which makes validation and resend checks fail once the lookup key expires.",
+            "Tests indicate db.mget should support multiple keys and return [] for falsy/empty input, so confirmation code lookup can fall back across more than one storage location.",
+            "Validation email logic should read/update an explicit expires field on the confirmation token object instead of relying on pexpire of the byUid pointer key.",
+            "ACP email status needs to derive the user’s state from available confirmation/validation data and gracefully report pending/expired/missing rather than assuming one key exists."
+          ],
+          "patch_plan": "1) Update the confirmation email flow to persist token expiry as data on the confirm token object (e.g. confirm:{code}.expires) and treat that as the source of truth for validity checks. 2) Adjust canSendValidation / resend-validation checks to resolve the confirmation code from the byUid index, then validate against the token object’s expires field instead of key TTL. 3) Add fallback lookup logic when the primary confirmation key is missing: use multi-key retrieval and/or alternative stored fields to recover the email or token data. 4) In ACP user email status rendering, compute status from validation flags plus confirmation token presence/expiry so the UI can distinguish validated, pending, expired, and missing states. 5) Extend key helper behavior to support mget on multiple keys and return an empty array for falsy/empty input, matching the new fallback lookup path.",
+          "confidence": 0.74
+        },
+        "method": "llm_patch_plan_overlap"
+      },
+      "masked": {
+        "success_score": 0.44,
+        "plan": {
+          "key_facts": [
+            "Email validation state should be derived from explicit confirmation data (including an `expires` timestamp on the confirmation record), not only from the TTL of the `confirm:byUid:<uid>` pointer.",
+            "Resend/validate flows need a fallback path when the primary lookup key has expired or is missing, so the email can still be recovered from alternate confirmation data or the user record.",
+            "The database multi-get helper must support empty/falsy input by returning `[]`, and must return `null` for missing keys to allow safe fallback lookups.",
+            "ACP user email status should use the same confirmation source of truth and fallback logic as the backend validation flow, so the UI reflects pending/valid/expired status correctly."
+          ],
+          "patch_plan": [
+            "Adjust the database `mget` helper to be tolerant of empty/falsy key lists and to preserve positional `null` values for missing keys.",
+            "Update email confirmation logic to store and consult an explicit expiration timestamp on the confirmation object, instead of relying solely on key expiration for validity.",
+            "Modify validation/resend helpers to resolve the confirmation email via fallback lookups when `confirm:byUid:<uid>` is absent, using alternate confirmation data and/or the stored user email.",
+            "Reuse that same lookup logic in ACP user management so the displayed validation status matches the backend decision path."
+          ],
+          "confidence": 0.77
+        },
+        "method": "llm_patch_plan_overlap"
+      },
+      "success_delta": 0.04
+    }
+  ]
+}

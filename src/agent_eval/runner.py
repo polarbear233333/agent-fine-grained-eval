@@ -9,6 +9,9 @@ from .agents import make_agent
 from .context_manager import ContextManager
 from .dataset_builder import DatasetBuilder
 from .evaluation_engine import EvaluationEngine
+from .agents import AGENT_PROMPT_VERSION
+from .llm_pcu_engine import PCU_PROMPT_VERSION
+from .manifest import write_manifest
 from .schema import CaseMetrics
 from .swe_bench_runner import SWEBenchRunner
 from .task_decomposition_eval import TaskDecompositionEvaluator
@@ -29,6 +32,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--max-visible-tokens", type=int, default=8192)
     parser.add_argument("--memory-slots", type=int, default=8)
     parser.add_argument("--noise-turns", type=int, default=None)
+    parser.add_argument("--pcu-mode", default="heuristic", choices=["heuristic", "llm", "hybrid"], help="PCU construction mode.")
+    parser.add_argument("--pcu-model", default="gpt-5.4-mini", help="Model used when --pcu-mode is llm or hybrid.")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--output-root", default="experiments")
     parser.add_argument("--run-name", default=None)
@@ -65,6 +70,8 @@ def run_experiment(args: argparse.Namespace) -> Path:
         memory_slots=args.memory_slots,
         noise_turns=args.noise_turns,
         seed=args.seed,
+        pcu_mode=args.pcu_mode,
+        pcu_model=args.pcu_model,
     )
     agent = make_agent(args.agent_provider, args.model)
     evaluator = EvaluationEngine()
@@ -74,6 +81,7 @@ def run_experiment(args: argparse.Namespace) -> Path:
 
     input_paths = normalize_inputs(args.input)
     metrics: list[CaseMetrics] = []
+    agent_api_calls: list[dict[str, Any]] = []
     analysis = {
         "case_count": 0,
         "source_counts": {},
@@ -112,6 +120,18 @@ def run_experiment(args: argparse.Namespace) -> Path:
             continue
 
         agent_output = agent.run(case)
+        meta = agent_output.get("_meta") if isinstance(agent_output, dict) else None
+        if isinstance(meta, dict):
+            agent_api_calls.append(
+                {
+                    "kind": "agent_context_plan",
+                    "model": meta.get("model"),
+                    "response_id": meta.get("response_id"),
+                    "prompt_version": meta.get("prompt_version"),
+                    "instance_id": case.instance_id,
+                    "attempt": meta.get("attempt"),
+                }
+            )
         logger.log("agent_output", case.instance_id, {"agent_output": agent_output})
 
         manager = ContextManager(case)
@@ -148,6 +168,20 @@ def run_experiment(args: argparse.Namespace) -> Path:
         analysis["trajectory_success_rate"] = round(sum(known_success_values) / len(known_success_values), 4)
     write_json(run_dir / "dataset_analysis.json", analysis)
     evaluator.write_outputs(str(run_dir), metrics, config)
+    write_manifest(
+        run_dir / "artifact_manifest.json",
+        command="python run.py",
+        config=config,
+        artifacts=[
+            {"name": "converted_dataset", "path": str(dataset_path)},
+            {"name": "trajectories", "path": str(run_dir / "trajectories.jsonl")},
+            {"name": "metrics", "path": str(run_dir / "metrics.json")},
+            {"name": "dataset_analysis", "path": str(run_dir / "dataset_analysis.json")},
+            {"name": "summary", "path": str(run_dir / "summary.md")},
+        ],
+        api_calls=builder.pcu_response_records() + agent_api_calls,
+        prompt_versions={"pcu": PCU_PROMPT_VERSION, "agent": AGENT_PROMPT_VERSION},
+    )
     return run_dir
 
 

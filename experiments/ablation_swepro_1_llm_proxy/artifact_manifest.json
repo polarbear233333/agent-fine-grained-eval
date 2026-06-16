@@ -1,0 +1,68 @@
+{
+  "schema_version": "pcu-bench-manifest-v1",
+  "created_at": "2026-06-15T17:21:08.897652+00:00",
+  "command": "python scripts/run_ablation.py",
+  "config": {
+    "dataset_path": "experiments\\real_swepro_10_hybrid.jsonl",
+    "output_dir": "experiments\\ablation_swepro_1_llm_proxy",
+    "solver_mode": "llm_proxy",
+    "model": "gpt-5.4-mini",
+    "max_cases": 1,
+    "max_pcus_per_case": 1,
+    "necessity": "hard",
+    "include_oracle_patch_pcus": false
+  },
+  "git_commit": "85e4b1fc5e8bce6c8851676fc88265ef4127d175",
+  "platform": {
+    "python": "3.12.7",
+    "system": "Windows",
+    "release": "11"
+  },
+  "prompt_versions": {
+    "ablation": "pcu-ablation-v1"
+  },
+  "artifacts": [
+    {
+      "name": "input_dataset",
+      "path": "experiments\\real_swepro_10_hybrid.jsonl",
+      "sha256": "daa2d3c24d1e5d35d95d2bac5732b9b9fa9cd274f570257a842b38ca3ecf19e8",
+      "bytes": 415730
+    },
+    {
+      "name": "ablations",
+      "path": "experiments\\ablation_swepro_1_llm_proxy\\ablations.jsonl",
+      "sha256": "9d4d6b5178f8d1b627f323132093657b48220045483ad07af9f52d404b904832",
+      "bytes": 3561
+    },
+    {
+      "name": "ablation_metrics",
+      "path": "experiments\\ablation_swepro_1_llm_proxy\\ablation_metrics.json",
+      "sha256": "d8b443f8fa75b271e66850afb22210c7ae6a14cc05e7df45501e6f4febbf5c95",
+      "bytes": 4238
+    }
+  ],
+  "api_calls": [
+    {
+      "kind": "ablation_llm_proxy",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_02a232ea1bd0579d016a3034643698819896678b22e52156ff",
+      "prompt_version": "pcu-ablation-v1",
+      "instance_id": "instance_NodeBB__NodeBB-04998908ba6721d64eba79ae3b65a351dcfbc5b5-vnan",
+      "pcu_id": "pcu_acp_status_labels",
+      "condition": "full"
+    },
+    {
+      "kind": "ablation_llm_proxy",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_09861126938eb816016a30346c46d881998666d26d3dccc816",
+      "prompt_version": "pcu-ablation-v1",
+      "instance_id": "instance_NodeBB__NodeBB-04998908ba6721d64eba79ae3b65a351dcfbc5b5-vnan",
+      "pcu_id": "pcu_acp_status_labels",
+      "condition": "masked"
+    }
+  ],
+  "notes": [
+    "Default ablation skips oracle patch PCUs because patch sources are not visible to agents.",
+    "proxy and llm_proxy are not official SWE test-pass measurements."
+  ]
+}

@@ -1,0 +1,3855 @@
+{
+  "summary": {
+    "ablation_count": 192,
+    "annotated_counts": {
+      "hard": 192
+    },
+    "inferred_counts": {
+      "hard": 192
+    },
+    "mean_success_delta": 0.55,
+    "necessity_agreement": 1.0
+  },
+  "results": [
+    {
+      "instance_id": "instance_NodeBB__NodeBB-04998908ba6721d64eba79ae3b65a351dcfbc5b5-vnan",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Render ACP email state with separate statuses instead of an ambiguous/incorrect boolean-only display.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4242,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3333,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_NodeBB__NodeBB-04998908ba6721d64eba79ae3b65a351dcfbc5b5-vnan",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Stop treating expired cache/key existence as the source of truth; confirmation should work until the stored confirmation record says it expires.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.2,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.1667,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-f91ace96223cac8161c16dd061907e138fe85111-v059c6fdc75567943479b23ebca7c07b5e9a7f34c",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Define/keep hide_qt_warning in qutebrowser.utils.qtlog, not qutebrowser.utils.log, and update all references/tests accordingly.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4118,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3824,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_NodeBB__NodeBB-51d8f3b195bddb13a13ddc0de110722774d9bb1b-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+      "pcu_id": "pcu2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Expose a reachable WebFinger handler at `/.well-known/webfinger` instead of returning 404.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.375,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.375,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_NodeBB__NodeBB-51d8f3b195bddb13a13ddc0de110722774d9bb1b-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+      "pcu_id": "pcu5",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Look up the userslug locally and return HTTP 404 for unknown accounts.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3333,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2222,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-c580ebf0801e5a3ecabc54f327498bb753c6d5f2-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "A block entry for example.com must also block sub.example.com and deeper subdomains.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.7083,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6667,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-c580ebf0801e5a3ecabc54f327498bb753c6d5f2-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "pcu_id": "PCU3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Iterate over widened hostnames of the request host and return blocked on the first membership hit in either blocked-host set.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4667,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-f327e65d11bb905ed9f15996024f857a95592629-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Collection-name validation must fail for reserved keywords in either namespace or collection segment.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4583,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2917,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-f327e65d11bb905ed9f15996024f857a95592629-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "A collection name with a keyword namespace is invalid.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4615,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4615,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-a26c325bd8f6e2822d9d7e62f77a424c1db4fbf6-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "pcu_id": "pcu1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Explicit Authorization headers must not be overridden by netrc-derived Basic auth when netrc usage is disabled.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4615,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4615,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-a26c325bd8f6e2822d9d7e62f77a424c1db4fbf6-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "pcu_id": "pcu2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add a boolean option that disables reading ~/.netrc and makes the module honor the caller's header exactly.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3182,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3182,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-4a5d2a7d24c9e4c11d3069220c0685b736d5ecde-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "pcu_id": "PCU-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add a property-value accessor on WikidataEntity that returns all usable values for a requested property.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5882,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5294,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-4a5d2a7d24c9e4c11d3069220c0685b736d5ecde-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "pcu_id": "PCU-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Return values in statement order, ignore malformed entries, and yield [] when nothing usable is present.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4483,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2759,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-f631cd4422744160d9dcf7a0455da532ce973315-v35616345bb8052ea303186706cec663146f0f184",
+      "pcu_id": "pcu1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Replace unconditional changelog-after-upgrade behavior with a setting-controlled threshold that can suppress patch-level prompts.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3182,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2727,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-f631cd4422744160d9dcf7a0455da532ce973315-v35616345bb8052ea303186706cec663146f0f184",
+      "pcu_id": "pcu2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Change qutebrowser_version_changed to return a VersionChange enum value rather than a boolean.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3103,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3103,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-3fa6904377c006497169945428e8197158667910-v626ec2a48416b10a88641359a169d99e935ff037",
+      "pcu_id": "PCU3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add session-uploader initialization in the Kubernetes service startup path so the async upload directory is created on disk.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4815,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4074,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-3fa6904377c006497169945428e8197158667910-v626ec2a48416b10a88641359a169d99e935ff037",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Initialize the Kubernetes service session uploader during setup so exec/attach sessions can run interactively.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5185,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5185,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e",
+      "pcu_id": "pcu_1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Make the service client types and their methods package-private instead of exported.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4783,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4783,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e",
+      "pcu_id": "pcu_2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Rename constructors, types, and methods to unexported forms while keeping use within agents, routers, and tests working.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3103,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2069,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-dbbd9d539c6d4fd45d5be9662aa19b6d664b5137-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Read submitted form data separately from the URL query string and prefer body fields when present.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.56,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.52,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-dbbd9d539c6d4fd45d5be9662aa19b6d664b5137-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Parse raw POST body form encoding into key, name, description, and seeds fields.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-395e5e20fab9cad517243372fa3c3c5d9e09ab2a-v7eee2454f617569fd6889f2211f75bc02a35f9f8",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Keep legacy PlayIterator.ITERATING_* and FAILED_* attribute access working on both the class and instances, and emit deprecation warnings.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6667,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.625,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-395e5e20fab9cad517243372fa3c3c5d9e09ab2a-v7eee2454f617569fd6889f2211f75bc02a35f9f8",
+      "pcu_id": "PCU3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Render run/failure states as readable names in HostState.__str__ rather than opaque numeric values.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6087,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6087,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-c782838c3a174fdff80cafd8cd3b1aa4dae8beb2",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Old remote proxy cache configuration should watch legacy ClusterConfig instead of the split RFD-28 cluster config resources, preventing access errors and re-sync loops.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6667,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6154,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-96b997802e942937e81d2b8a32d08f00d3f4bc4e-v5fc38aaf22415ab0b70567368332beee7955b367",
+      "pcu_id": "pcu_plain_seconds_to_ms",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "parse_duration should return 60000 for input \"60\" and similar plain integers.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5882,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5882,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-96b997802e942937e81d2b8a32d08f00d3f4bc4e-v5fc38aaf22415ab0b70567368332beee7955b367",
+      "pcu_id": "pcu_reject_negative_and_malformed",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "parse_duration should return -1 for negative values, fractional values, and malformed unit strings.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.65,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-33e8edb3d508d6eefb354819ca693b7accc695e7",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Implement exact modifier-set matching so extra ctrl/alt/shift/meta state prevents a shortcut from firing unless explicitly allowed.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-33e8edb3d508d6eefb354819ca693b7accc695e7",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Map equivalent shortcuts to meta/Command on macOS and ctrl/Control on Windows/Linux via platform-aware key combo definitions.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5833,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5833,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-407407d306e9431d6aa0ab566baa6e44e5ba2904",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Each vulnerability/source combination is emitted once per source in cveContents instead of producing duplicate records.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4815,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4074,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-407407d306e9431d6aa0ab566baa6e44e5ba2904",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Debian severities for one CVE/source are consolidated into one cveContents object with a pipe-separated severity field.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4828,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3793,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-111347e9583372e8ef91c82e0612ea437ae3a9c9-v2d9a6c849c60ed19fd0858ce9e40b7cc8e097e59",
+      "pcu_id": "pcu_1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Parser logic must resolve $6-linked MARC fields rather than treating them as unrelated fields.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.2143,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.1786,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-111347e9583372e8ef91c82e0612ea437ae3a9c9-v2d9a6c849c60ed19fd0858ce9e40b7cc8e097e59",
+      "pcu_id": "pcu_2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Processed MARC output must include alternate-script titles and names alongside the main record data.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4211,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4211,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-e6c0da61324a0c04026ffd1c031436ee2be9503a",
+      "pcu_id": "pcu_alpine_src_only_ovals",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Alpine OVAL matching must evaluate vulnerabilities against source packages rather than treating every installed binary package as directly affected.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4375,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4375,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-6eaaf3a27e64f4ef4ef855bd35d7ec338cf17460-v626ec2a48416b10a88641359a169d99e935ff037",
+      "pcu_id": "PCU-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add a linear benchmark source that yields configs beginning at the lower bound, increments by the configured step, and returns no more benchmarks after exceeding the upper bound.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5455,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4545,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-6eaaf3a27e64f4ef4ef855bd35d7ec338cf17460-v626ec2a48416b10a88641359a169d99e935ff037",
+      "pcu_id": "PCU-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Have successive GetBenchmark calls return rates 10, 20, 30, 40, 50 before terminating.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4167,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4167,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Rename the user-facing tab-selection command from :buffer to :tab-select everywhere users encounter it.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.381,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3333,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Update completion behavior/tests so command-line completion suggestions and log output reference :tab-select, not :buffer.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4583,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4583,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-e6d86299a855687b21970504fbf06f52a8f80c74-vce94f93ad1030e3136852817f2423c1b3ac37bc4",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Renewing a web session should immediately pick up updated user traits and embed them into the new certificate.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5172,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4828,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-e6d86299a855687b21970504fbf06f52a8f80c74-vce94f93ad1030e3136852817f2423c1b3ac37bc4",
+      "pcu_id": "PCU6",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "The renewed session certificate must include the updated login traits (and, by test intent, updated database-user traits as well).",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3704,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3704,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-8a5a63af6e0be406aa6c8c9b6d5f28b2f1b6af5a-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Read the current hostname from environment state and use an allowlist to decide whether to register the job.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.35,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.25,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-8a5a63af6e0be406aa6c8c9b6d5f28b2f1b6af5a-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add conditional scheduling so background jobs register only on designated hosts.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6087,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6087,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-b65e76293a917ee2dfc5d4b373b1c62e054d0dca",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Implement per-event routing that delivers user-action events only to other sessions of the same authenticated user, never back to the originating client.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4444,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4444,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-b65e76293a917ee2dfc5d4b373b1c62e054d0dca",
+      "pcu_id": "PCU3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Compare sender and recipient clientUniqueId and suppress delivery when they match.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4167,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4167,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-25858f9f0c165df25742acf8309ce909773f0cdd-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "pcu_id": "pcu1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Centralize Solr helper functions and mutable Solr state in openlibrary/solr/utils.py, instead of defining them in update_work or other update modules.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6071,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6071,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-5dfde12c1c1c0b6e48f17e3405468593e39d9492-vnan",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "When the device list is refreshed after sign-out or any other update, remove stale client-information entries for devices no longer returned by the server.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.7241,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6552,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-5dfde12c1c1c0b6e48f17e3405468593e39d9492-vnan",
+      "pcu_id": "PCU4",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Block voice broadcast start/preparation in connection-error states and surface a user-facing explanatory dialog/message.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6154,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5769,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_protonmail__webclients-2c3559cad02d1090985dba7e8eb5a129144d9811",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Replace the local plan-to-addon switch logic with the shared resolver for all assistant upsell paths.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5455,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5455,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_protonmail__webclients-2c3559cad02d1090985dba7e8eb5a129144d9811",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Build planIDs uniformly in both flows, with the base plan always present and the addon entry added conditionally.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4516,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3226,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_NodeBB__NodeBB-397835a05a8e2897324e566b41c5e616e172b4af-v89631a1cdb318276acb48860c5d78077211397c6",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Update list removal so a single call can remove several specified elements from the list.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3913,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3043,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_NodeBB__NodeBB-397835a05a8e2897324e566b41c5e616e172b4af-v89631a1cdb318276acb48860c5d78077211397c6",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Make list removal accept an array argument and correctly process every element in that array.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.35,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.25,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-e42da21a07a5ae35835ec54f74004ebd58713874",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Batch evaluation should continue processing even if one or more requested flags are disabled, without returning an overall error.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.64,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-e42da21a07a5ae35835ec54f74004ebd58713874",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "The batch response should contain an entry for every requested flag, ordered to match the input list, with disabled flags represented explicitly.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5217,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3478,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-3b2c25ee8a3ac247c3fad13ad8d64ace34ec8ee7",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Remove the invalid-context failure for missing flags and allow bulk evaluation to proceed.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4286,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4286,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-3b2c25ee8a3ac247c3fad13ad8d64ace34ec8ee7",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "When flags are omitted, evaluate against the current namespace and the provided targeting context.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5238,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5238,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_NodeBB__NodeBB-a5afad27e52fd336163063ba40dcadc80233ae10-vd59a5728dfc977f44533186ace531248c2917516",
+      "pcu_id": "PCU-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Check the deny list first and reject matching senders; otherwise, if the allow list is non-empty, permit only senders in that allow list.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5714,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4762,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_NodeBB__NodeBB-a5afad27e52fd336163063ba40dcadc80233ae10-vd59a5728dfc977f44533186ace531248c2917516",
+      "pcu_id": "PCU-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "When the recipient has incoming chats disabled, the server rejects every inbound chat attempt before considering allow/deny lists.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5357,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5357,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-eefac60a350930e5f295f94a2d55b94c1988c04e-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+      "pcu_id": "pcu_dmi_partial_errors",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Accumulate per-file read/open errors, return partial DMIInfo data, and return a combined error containing permission-denied failures.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5312,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4688,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-eefac60a350930e5f295f94a2d55b94c1988c04e-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+      "pcu_id": "pcu_osrelease_parse_and_unquote",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Parse PRETTY_NAME, NAME, VERSION_ID, VERSION, and ID from os-release and unquote their values before storing them in OSRelease.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4231,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4231,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_NodeBB__NodeBB-f9ce92df988db7c1ae55d9ef96d247d27478bc70-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add a pre-upload existence check for the admin file upload target directory.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3333,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3333,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_NodeBB__NodeBB-f9ce92df988db7c1ae55d9ef96d247d27478bc70-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+      "pcu_id": "pcu-3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Return the invalid-path error payload for a missing upload directory.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4737,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4737,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-8e640bb8580affb7e0ea6225c0bbe240186b6b08",
+      "pcu_id": "pcu_model_level_refresh_entrypoint",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add/route artist refresh through a model-layer Albums aggregation method instead of SQL-based refresh logic.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-8e640bb8580affb7e0ea6225c0bbe240186b6b08",
+      "pcu_id": "pcu_artist_aggregates",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Compute AlbumCount from number of albums, SongCount as summed song counts, and Size as summed sizes.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.55,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-2c84be80b65d022c262956cd26fc79d8bb2f7010",
+      "pcu_id": "pcu1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Invalid source RPM filenames should be downgraded from fatal errors to warnings, and package scanning should continue.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5769,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5385,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-2c84be80b65d022c262956cd26fc79d8bb2f7010",
+      "pcu_id": "pcu2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Parsing should extract the epoch from the source RPM filename and incorporate it into both the binary package version and the source package version.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6087,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6087,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-c12967bc73fdf02054cf3ef8498c05e25f0a18c0",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Any gRPC response caused by a canceled context must surface status code Canceled.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3913,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3913,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-c12967bc73fdf02054cf3ef8498c05e25f0a18c0",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Any gRPC response caused by a deadline-exceeded context must surface status code DeadlineExceeded.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5556,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5556,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-0fc6d1109d041c69a68a896db87cf1b8c194cef7-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "pcu_id": "pcu_favorite_paths_on_empty_input",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "When the :open prompt is empty, filesystem completion shows the configured favorite paths.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4375,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4375,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-0fc6d1109d041c69a68a896db87cf1b8c194cef7-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "pcu_id": "pcu_filesystem_category_exists",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "`completion.open_categories` can include a Filesystem category and `:open` completion displays it as a selectable category.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6111,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5556,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-b748edea457a4576847a10275678127895d2f02f-v1055803c3a812189a1133297f7f5468579283f86",
+      "pcu_id": "pcu_1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Introduce a structured multipart/form-data construction path instead of manual byte/string concatenation.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5385,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4615,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-0ac7334939981cf85b9591ac295c3816954e287e",
+      "pcu_id": "PCU-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Select among all matching database services instead of committing to the first match.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5217,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4348,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-0ac7334939981cf85b9591ac295c3816954e287e",
+      "pcu_id": "PCU-3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "On tunnel/connection সমস্যা, continue to the next candidate and only fail after exhausting all candidates.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-b5d8169fc0a5e43fee2616c905c6d32164654dc6",
+      "pcu_id": "pcu-4",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Update trusted cluster role mappings so admin roles map to admin roles on the local side.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5217,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5217,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-b5d8169fc0a5e43fee2616c905c6d32164654dc6",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Keep OSS users able to authenticate to leaf clusters after the root cluster upgrades to 6.0.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.68,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.68,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-86b60e1478e44d28b1aff6b9ac7e95ceb05bc5fc",
+      "pcu_id": "PCU-CIDR-EXPAND",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Parse CIDR hosts and produce one enumerated server target per address in the range.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6087,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6087,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-86b60e1478e44d28b1aff6b9ac7e95ceb05bc5fc",
+      "pcu_id": "PCU-IGNORE-SUBTRACT",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Apply ignoreIPAddresses to delete matching IPs/CIDRs from the enumerated host list before finalizing servers.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-70248f256f93ed9b1984494d0a1a919ddd774892-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Accept inputs like 5s, 2m30s, and 1h for :later, and interpret them as durations rather than literal numeric milliseconds.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4483,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4483,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-70248f256f93ed9b1984494d0a1a919ddd774892-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Keep plain integers working as millisecond delays while also supporting unit-suffixed durations.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.2692,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.1923,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_protonmail__webclients-6dcf0d0b0f7965ad94be3f84971afeb437f25b02",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "When aliases exist, the drawer renders the aliases list consistently.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.48,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.48,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_protonmail__webclients-6dcf0d0b0f7965ad94be3f84971afeb437f25b02",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "When the alias collection is empty, the drawer shows the explicit empty-state message.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.55,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-e40889e7112ae00a21a2c74312b330e67a766cc0-v1055803c3a812189a1133297f7f5468579283f86",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "requirements.yml collection entries can resolve and install collections from git repositories.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6818,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6818,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-e40889e7112ae00a21a2c74312b330e67a766cc0-v1055803c3a812189a1133297f7f5468579283f86",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "git-based collection installs accept branch/tag/commit identifiers as the version selector.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6154,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6154,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-27875ba2dd1673ddf8affca526b0664c12c3b98b",
+      "pcu_id": "pcu1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Move MIME extension mappings and the lossless-format list out of source constants and into a YAML config file.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.619,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5714,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-27875ba2dd1673ddf8affca526b0664c12c3b98b",
+      "pcu_id": "pcu5",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Serve the losslessFormats UI config value from conf/mime.LosslessFormats and preserve the uppercase comma-separated formatting.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4483,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4483,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-11838fad1028672eb975c79d8984f03348500173-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Include 700/710/711 creators in the structured authors array even when a 100 main author is present; do not divert them to contributions.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4231,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-11838fad1028672eb975c79d8984f03348500173-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "pcu_id": "pcu-3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "For linked 880 fields, assign the appropriate script to name and preserve the other script in alternate_names across person, organization, and event fields.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5517,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4828,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-5e369604e1930b1a2e071fecd7ec5276ebd12cb1-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "pcu_id": "PCU3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Display.set_queue raises RuntimeError when invoked outside a forked/child process.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3636,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2727,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-72a8f8f03b1a01bb70ef8a5bb61759416991b32c-vnan",
+      "pcu_id": "pcu1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Expose a window-width value from UI state that components can read directly and that changes when the window is resized.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-72a8f8f03b1a01bb70ef8a5bb61759416991b32c-vnan",
+      "pcu_id": "pcu3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Listen for UIStore resize events and refresh the stored width when they occur.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.381,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.381,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-b4f7c185ae5f1824ac7f3a18e8adf6a4b468459c-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Make the affected Solr updater methods return a 2-tuple instead of a bare SolrUpdateRequest.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5455,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5455,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-b4f7c185ae5f1824ac7f3a18e8adf6a4b468459c-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Ensure AuthorSolrUpdater.update_key and WorkSolrUpdater.update_key both return (SolrUpdateRequest, list[str]) in that order.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4091,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-3ff75e29fb2153a2637fe7f83e49dc04b1c99c9f",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "When the user has only one MFA device registered, deletion of that device must be blocked.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4231,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4231,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-3ff75e29fb2153a2637fe7f83e49dc04b1c99c9f",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "The server must reject deletion of the final MFA device whenever the cluster policy requires MFA.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4211,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3158,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-f808b4dd6e36b9dc8b011eb26b196f4e2cc64c41",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Extend database config loading to read protocol/host/port/user/password/name keys alongside the existing URL field.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6552,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6552,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-f808b4dd6e36b9dc8b011eb26b196f4e2cc64c41",
+      "pcu_id": "PCU3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Synthesize the final database connection string from discrete fields when URL is absent, including protocol-specific defaults and formatting.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5385,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4615,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-5af1a227339e46c7abf3f2815e4c636a0c01098e",
+      "pcu_id": "PCU-3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Select the installed kernel package version that matches the running kernel release, even when a newer debug package is also installed.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5833,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5417,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-5af1a227339e46c7abf3f2815e4c636a0c01098e",
+      "pcu_id": "PCU-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "When scanning an installed system, identify the package records for the currently running debug kernel family and its related modules packages.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5769,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5769,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-5e8488c2838ff4268f39db4a8cca7d74eecf5a7e-vnan",
+      "pcu_id": "pcu1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Track a startup baseline of device IDs and compare later device updates against it so only post-startup additions count as new sessions.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.36,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.32,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-5e8488c2838ff4268f39db4a8cca7d74eecf5a7e-vnan",
+      "pcu_id": "pcu3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Show the warning toast when an unverified device appears after startup and is not dismissed or verified.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5556,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4444,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-be59caa59bf47ca78a4760eb7ff38568372a8260-v1055803c3a812189a1133297f7f5468579283f86",
+      "pcu_id": "p1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Generate iptables rules that can use the set extension with --match-set for ipset-backed matching.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-be59caa59bf47ca78a4760eb7ff38568372a8260-v1055803c3a812189a1133297f7f5468579283f86",
+      "pcu_id": "p2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add match_set and match_set_flags inputs and wire them together in rule generation.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3636,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3182,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_protonmail__webclients-08bb09914d0d37b0cd6376d4cab5b77728a43e7b",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Render exactly `length` single-character input boxes and map the controlled value across them.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6154,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5769,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_protonmail__webclients-08bb09914d0d37b0cd6376d4cab5b77728a43e7b",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "On valid character entry, update the value and move focus to the next input, if any.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3913,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3478,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-b5e0293645570f3f404ad1dbbe5f006956ada0df-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Replace the newline-only substitution with a general CLIXML string escape decoder for `_xDDDD_` patterns.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.381,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3333,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-b5e0293645570f3f404ad1dbbe5f006956ada0df-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Decode control characters and surrogate-pair-encoded Unicode into their actual characters in parsed CLIXML output.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.45,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-00bec1e7c8f3272c469a58e1377df03f955ed478-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Implement validation as an OR over the complete-record rule and the differentiable/strong-identifier rule.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3125,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3125,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-00bec1e7c8f3272c469a58e1377df03f955ed478-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Allow import validation to accept records that are missing some bibliographic metadata when they still have a qualifying strong identifier.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5417,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-756f00f79ba8abf9fe53f3c6c818123b42eb7355",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Return warnings independently from the Config object so callers can consume config data without embedded warning state.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5926,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5926,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-756f00f79ba8abf9fe53f3c6c818123b42eb7355",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Use explicit-presence checks for deprecations rather than value-based checks that can fire on defaults.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4167,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.375,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-5069b09e5f64428dce59b33455c8bb17fe577070-v8717e18970bcdc4e0d2cea3b1527752b21e74866",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Conflict handling for Booknotes must be fully non-destructive; the table contents must remain identical after the failed update.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4348,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2609,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-5069b09e5f64428dce59b33455c8bb17fe577070-v8717e18970bcdc4e0d2cea3b1527752b21e74866",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "On work-id collisions, Booknotes updates must not delete or alter existing booknotes rows.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5909,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5455,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-41dfec20bfe9b62cddbbbf621bef2e9aa9685157-vnan",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Populate a delegated-auth object in the validated server config when m.authentication discovery succeeds, preserving the reported fields.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.52,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.44,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-41dfec20bfe9b62cddbbbf621bef2e9aa9685157-vnan",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Leave delegatedAuthentication undefined unless the discovery block exists and is successful.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4375,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4375,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-b3cd920bbb25e01fdb2dab66a5a913363bc62f6c",
+      "pcu_id": "PCU3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "When sorting is enabled, order namespaces, flags, segments, and variants by key in a stable deterministic way.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4783,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4783,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-b3cd920bbb25e01fdb2dab66a5a913363bc62f6c",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Make export output ordering deterministic instead of varying by backend implementation.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3125,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3125,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-8d56ec898e776e7e53e352cb9b25677975787ffc",
+      "pcu_id": "pcu-3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Detect differing album_artist_id values within a compilation and force AlbumArtistID/AlbumArtist to the canonical Various Artists constants.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5238,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5238,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-8d56ec898e776e7e53e352cb9b25677975787ffc",
+      "pcu_id": "pcu-4",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "For compilations, compare all album_artist_id values and keep the existing album artist pair when they are all the same.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6154,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6154,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-5c6c22f3d2edf2f1b10f5dc335e32cb6a5f40341-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "pcu_id": "pcu_isbn_split_into_two_lists",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "The importer must split incoming ISBNs into isbn_10 and isbn_13 lists based on ISBN length.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4545,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4545,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-5c6c22f3d2edf2f1b10f5dc335e32cb6a5f40341-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "pcu_id": "pcu_publishers_and_places_separate",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "IA metadata import should emit separate publish_places and publishers fields instead of a single publisher field containing both.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6957,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6522,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-1b70260d5aa2f6c9782fd2b848e8d16566e50d85-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+      "pcu_id": "issue_shared_dependency_role3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "A dependency role should not be re-executed just because multiple roles depend on it.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3571,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3214,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-1b70260d5aa2f6c9782fd2b848e8d16566e50d85-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+      "pcu_id": "issue_block_followed_by_task_trigger",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Tag filtering must not lose role-completion state when a block is followed by a later task.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.2917,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2917,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-404c412bcb694f04ba0c4d5479541203d701bca0-vnan",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Register a handler for the store's unexpected close event and invoke recovery logic when it fires.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.2857,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2857,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-404c412bcb694f04ba0c4d5479541203d701bca0-vnan",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "When the store closes, stop the active Matrix client and open an error dialog for signed-in users.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4583,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Parse incoming metadata for the grpcgateway-cookie entry, decode the cookie named flipt_client_token, and authenticate with that token.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.375,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3333,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Keep the existing Authorization: Bearer token path working exactly as before.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.381,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.381,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-473a15f7908f2bb6d670b0e908ab34a28d8cf7e2-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+      "pcu_id": "pcu1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Avoid the QtWebEngine startup state that triggers the network-service crash loop under affected locales.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.52,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.52,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-473a15f7908f2bb6d670b0e908ab34a28d8cf7e2-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+      "pcu_id": "pcu2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add a config flag for enabling the locale workaround, with default false.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2667,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-a692fe21811f88d92e8f7047fc615e4f1f986b0f-vnan",
+      "pcu_id": "pcu_1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Introduce an io.element.e2ee.force_disable config path that can disable E2EE by policy.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.7391,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6957,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-a692fe21811f88d92e8f7047fc615e4f1f986b0f-vnan",
+      "pcu_id": "pcu_2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Make create-room behavior and room-creation UI reflect forced disabled encryption, including disabling/hiding the toggle.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.625,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5417,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-84806a178447e766380cc66b14dee9c6eeb534f4",
+      "pcu_id": "pcu_oci_repo_validation",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Repository URLs with an unsupported scheme are rejected during configuration validation with a clear message listing allowed schemes.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5357,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5357,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-84806a178447e766380cc66b14dee9c6eeb534f4",
+      "pcu_id": "pcu_oci_schema_fields",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "OCI configuration parsing recognizes bundles_directory, poll_interval, and authentication instead of dropping or rejecting them.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3793,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3793,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-b8fbb2d1e90ffcde88ed5fe9920015c1be075788-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "The patch must stop the MFA-add flow from submitting malformed or incomplete TOTP input in this scenario.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4583,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4167,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-b8fbb2d1e90ffcde88ed5fe9920015c1be075788-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "A user who already has one OTP device and one U2F device must be able to add a new OTP device successfully.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.44,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-75c2c1a572fa45d1ea1d1a96e9e36e303332ecaa-vnan",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Detect the user's audio preference and route non-voice recordings to a higher-quality encoder configuration.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3846,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-75c2c1a572fa45d1ea1d1a96e9e36e303332ecaa-vnan",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "When voice processing/noise suppression is disabled, the recording path must choose the high-quality configuration.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6364,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5455,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-0ec945d0510cdebf92cdd8999f94610772689f14",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Parse installed package output by preserving empty fields so a blank release remains blank instead of causing later columns to shift left.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4571,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4286,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-0ec945d0510cdebf92cdd8999f94610772689f14",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Correctly parse the line so the binary package keeps Release=\"\" and the source package is still recognized with the right version components.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5312,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5312,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-f86c58e2d235d8b96029d102c71ee2dfafd57997-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "The Windows stderr path must decode or replace CLIXML content so the returned stderr is readable text/bytes rather than raw CLIXML fragments.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5556,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5556,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-f86c58e2d235d8b96029d102c71ee2dfafd57997-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "pcu_id": "PCU4",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "The patch must preserve surrounding plain stderr and leave incomplete/invalid CLIXML untouched.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.2857,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2857,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_NodeBB__NodeBB-f48ed3658aab7be0f1165d4c1f89af48d7865189-v0495b863a912fbff5749c67e860612b91825407c",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "The edit flow must validate that the target chat message exists and return a 400 response with the translated invalid-mid message when it does not.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5652,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5652,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_NodeBB__NodeBB-f48ed3658aab7be0f1165d4c1f89af48d7865189-v0495b863a912fbff5749c67e860612b91825407c",
+      "pcu_id": "PCU3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "The patch must preserve ownership/permission checks and return cant-edit-chat-message for unauthorized edits.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.2609,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2609,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-f7753550f2c1dcb2348e4779fd5287166754827e-v059c6fdc75567943479b23ebca7c07b5e9a7f34c",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Unknown key events must be detected and rejected safely instead of constructing an invalid Qt.Key and crashing.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3043,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2609,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-8d5ea98e50cf616847f4e5a2df300395d1f719e9",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "When the new flag is enabled, inactive WordPress plugins and themes are excluded from vulnerability scanning output.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6316,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6316,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-8d5ea98e50cf616847f4e5a2df300395d1f719e9",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add conditional filtering so only active WordPress components are kept when the flag is set, instead of scanning every installed plugin/theme.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4333,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4333,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-e50808c03e4b9d25a6a78af9c61a3b1616ea356b",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add a sink interface and route audit delivery through sink implementations so new destinations can be added without changing audit event generation.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6552,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.6552,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-e50808c03e4b9d25a6a78af9c61a3b1616ea356b",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Extend config parsing/defaults to support an `audit` section with sink configuration and related buffering settings.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3889,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3333,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-2be514d3c33b0ae9188e11ac9975485c853d98bb-vce94f93ad1030e3136852817f2423c1b3ac37bc4",
+      "pcu_id": "pcu-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Eliminate the registration/connectivity bottleneck so all reverse tunnel nodes can reach the cluster under load.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.52,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.52,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-2be514d3c33b0ae9188e11ac9975485c853d98bb-vce94f93ad1030e3136852817f2423c1b3ac37bc4",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "The patch must ensure complete registration, not merely improve average throughput.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.1176,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.0588,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-be7b9114cc9545e68fb0ee7bc63d7ec53d1a00ad",
+      "pcu_id": "PCU-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Ensure the Trivy-to-Vuls conversion preserves package PURL into models.Library entries inside LibraryScanners.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5238,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4762,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-be7b9114cc9545e68fb0ee7bc63d7ec53d1a00ad",
+      "pcu_id": "PCU-4",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Populate models.Library.PURL in the final scan result for library findings.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4706,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4706,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-f8cc11d9c1575fdba5ac66aee0befca970da8d64-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "pcu_id": "pcu_1_identifiers_and_source_records",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Map each feed item's numeric id into identifiers.open_textbook_library as a string and emit source_records with the matching open_textbook_library:<id> value.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.32,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.32,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-f8cc11d9c1575fdba5ac66aee0befca970da8d64-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "pcu_id": "pcu_2_core_bibliographic_fields",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Copy the source title into the import record's title field when present, alongside other preserved bibliographic fields such as isbn_13, languages, and description.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3704,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3704,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-e52fa8d6ed1d23e36f2a86e5d3efe9aa057a1b0d",
+      "pcu_id": "PCU-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "When the existing DB metadata schema version differs from db.SchemaVersion, the logic should decide to download a new database instead of continuing with the old one.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4828,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4828,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-e52fa8d6ed1d23e36f2a86e5d3efe9aa057a1b0d",
+      "pcu_id": "PCU-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "shouldDownload should return true whenever metadata.SchemaVersion is not equal to common.SchemaVersion/db.SchemaVersion.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-e64c6c1ca50d7d26a8e7747d8eb87642e767cd74-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Avoid raising ValueError on malformed zip timestamp strings during archive freshness checks; treat them as a usable fallback timestamp.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.16,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.16,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-e64c6c1ca50d7d26a8e7747d8eb87642e767cd74-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Parse this input without exception and normalize it to the epoch-like lower bound used by the module.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.1053,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.1053,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-1351c59fd43689753de1fca32c78d539a116ffc1-v29f82c9cf21d57b242f8d8b0e541525d259e2d63",
+      "pcu_id": "pcu1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Expanded edition records must always populate a consistent author identifier derived from name plus available date fields.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4583,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4167,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-1351c59fd43689753de1fca32c78d539a116ffc1-v29f82c9cf21d57b242f8d8b0e541525d259e2d63",
+      "pcu_id": "pcu3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Matching should succeed or fail based on the actual author/date similarity score, not on absent author identifiers.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4545,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-2760bfc8369f1bee640d6d7a7e910783143d4c5f-vnan",
+      "pcu_id": "pcu1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add a shared in-flight guard / disabled state so repeated clicks are ignored until the async action completes.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4667,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-2760bfc8369f1bee640d6d7a7e910783143d4c5f-vnan",
+      "pcu_id": "pcu2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Wire the updating flag into the button components so they become non-interactive during an active operation.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.2917,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2917,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_tutao__tutanota-da4edb7375c10f47f4ed3860a591c5e6557f7b5c-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf",
+      "pcu_id": "PCU-1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Allow read-token requests for user-owned archives to succeed even when archiveDataType is not supplied.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5714,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5238,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_tutao__tutanota-da4edb7375c10f47f4ed3860a591c5e6557f7b5c-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf",
+      "pcu_id": "PCU-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "BlobAccessTokenFacade.requestReadTokenArchive must accept null archiveDataType without failing.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3529,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3529,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-1077729a19c0ce902e713cf6fab42c91fb7907f1-vnan",
+      "pcu_id": "PCU3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "After a space switch, the selected room tile must instantly show the room last active in that target space.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6207,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5517,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-1077729a19c0ce902e713cf6fab42c91fb7907f1-vnan",
+      "pcu_id": "PCU5",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Space switching must update the active index immediately, even if the room view store has not yet emitted a room change.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4444,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4074,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-71fe08ea0f159ccb707904d87f0a4aef205a167c-vnan",
+      "pcu_id": "pcu-2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Encryption event subtitles/tooltips should say \"profile picture\" instead of \"avatar\".",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3889,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3889,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-71fe08ea0f159ccb707904d87f0a4aef205a167c-vnan",
+      "pcu_id": "pcu-3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Clickable avatar UI should expose \"Profile picture\" as its aria-label rather than \"Avatar\".",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5714,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5714,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_tutao__tutanota-09c2776c0fce3db5c6e18da92b5a45dce9f013aa-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Implement per-import progress reporting that emits ongoing updates for the active calendar import and does not conflate it with other simultaneous work.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3448,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2759,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_tutao__tutanota-09c2776c0fce3db5c6e18da92b5a45dce9f013aa-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Ensure the operation's progress tracker is completed/removed at import end so no lingering progress indicator remains.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.1739,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.1739,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-97434c1789a6444b30aae5ff5aa124a96a88f504",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "NowPlaying storage/query behavior must preserve distinct active sessions so GetNowPlaying returns all currently active plays.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.375,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3438,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-97434c1789a6444b30aae5ff5aa124a96a88f504",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Player matching must use a more precise discriminator than the old type field so concurrent sessions do not map to the same player record.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.2593,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.1111,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-85b867fe8d4378c8e371f055c70452f546055854-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "pcu_id": "pcu_parse_point_valid_xy",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add a reusable parser that accepts comma-separated integer coordinates and returns a QPoint for valid inputs.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-85b867fe8d4378c8e371f055c70452f546055854-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "pcu_id": "pcu_parse_point_error_format",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Raise ValueError with the message pattern `String {input} does not match X,Y` for invalid coordinate strings.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4815,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4815,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-1a77b7945a022ab86858029d30ac7ad0d5239d00-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Relax or replace the 16MB document-size check in readHeaderAndPayload so larger valid MongoDB messages are accepted.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.35,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_gravitational__teleport-1a77b7945a022ab86858029d30ac7ad0d5239d00-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Allow message sizes at least up to the MongoDB default max message size (48MB) and preserve correct processing for large datasets.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3889,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3333,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-e64622cd2df5b521342cf4a62e0d4cb8f8c9ae5a-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "signal_name must always normalize a signal object to just its attribute name, with no extra prefixes, indices, or parameter lists.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3333,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.2727,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_qutebrowser__qutebrowser-e64622cd2df5b521342cf4a62e0d4cb8f8c9ae5a-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+      "pcu_id": "PCU5",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "signal_name must return 'valueChanged' for overloaded signals, not a decorated signature string containing parameter types or overload information.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4815,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4074,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-b22f5f02e40b225b6b93fff472914973422e97c6",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Validate source and destination references before copying and fail when either reference is missing a tag.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.68,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.68,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_flipt-io__flipt-b22f5f02e40b225b6b93fff472914973422e97c6",
+      "pcu_id": "PCU3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Create a new destination bundle record that mirrors the source contents while setting destination repository/tag and maintaining valid digest/created-at metadata.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-f0359a5c180b8fec4329c77adcf967c8d3b7b787-vnan",
+      "pcu_id": "pcu1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add application-side conditional rendering so both tabs stop showing QR sign-in unconditionally.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4737,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3684,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_element-hq__element-web-f0359a5c180b8fec4329c77adcf967c8d3b7b787-vnan",
+      "pcu_id": "pcu2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Suppress all QR sign-in sections whenever the feature flag is off.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4091,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3636,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_protonmail__webclients-09fcf0dbdb87fa4f4a27700800ee4a3caed8b413",
+      "pcu_id": "pcu_1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add/adjust an elements helper that can determine Proton-origin status from the IsProton field.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.45,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_protonmail__webclients-09fcf0dbdb87fa4f4a27700800ee4a3caed8b413",
+      "pcu_id": "pcu_2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "isFromProton returns true for both element types when IsProton is 1.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3684,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3684,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-5001518260732e36d9a42fb8d4c054b28afab310",
+      "pcu_id": "pcu-1-user-props-table",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Add/use a user_props persistence model so Last.fm session keys are stored per user rather than as globally prefixed property keys.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5161,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4516,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-12734fa21c08a0ce8c84e533abdc560db2eb1955-v7eee2454f617569fd6889f2211f75bc02a35f9f8",
+      "pcu_id": "pcu_2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Undefined template values must produce an UndefinedError-style failure that names the missing variable, not a generic YAML representer error.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4231,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4231,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-12734fa21c08a0ce8c84e533abdc560db2eb1955-v7eee2454f617569fd6889f2211f75bc02a35f9f8",
+      "pcu_id": "pcu_3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "The dumper/filter path must raise or propagate UndefinedError for undefined values rather than converting them into a YAML representer exception.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.3846,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3846,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-fa85e2a7816a6fe3829a4c0d8e893e982b0985da",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Use the authenticated user's stable ID as the player association key so casing differences in the username do not prevent finding or creating the correct player.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.6538,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_navidrome__navidrome-fa85e2a7816a6fe3829a4c0d8e893e982b0985da",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Persist the player against UserId during registration, and make the test observe UserId rather than UserName.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.45,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.45,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_NodeBB__NodeBB-2657804c1fb6b84dc76ad3b18ecf061aaab5f29f-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Reject reorder attempts from non-admin/non-moderator users with a no-privileges error.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.5,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_NodeBB__NodeBB-2657804c1fb6b84dc76ad3b18ecf061aaab5f29f-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+      "pcu_id": "PCU3",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Move the selected pinned topic to the requested position while keeping the remaining pinned topics in the correct order.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4091,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.3182,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-0fd88717c953b92ed8a50495d55e630eb5d59166-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "Make file parsing recover an existing ident field from persisted password entries.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4286,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.381,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_ansible__ansible-0fd88717c953b92ed8a50495d55e630eb5d59166-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "Change _parse_content to return a 3-tuple including ident and update callers accordingly.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.1667,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.1667,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-6eff6a9329a65cc412e79b8f82444dfa3d0f0b5a",
+      "pcu_id": "PCU1",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "tests",
+      "expected_patch_effect": "The standard-support check returns the correct boolean before and after the configured support cutoff for each OS family/release.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.4828,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4828,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    },
+    {
+      "instance_id": "instance_future-architect__vuls-6eff6a9329a65cc412e79b8f82444dfa3d0f0b5a",
+      "pcu_id": "PCU2",
+      "annotated_necessity": "hard",
+      "inferred_necessity": "hard",
+      "pcu_source": "issue",
+      "expected_patch_effect": "A shared lookup returns the correct EOL record for known family/release combinations in a deterministic way.",
+      "solver_mode": "proxy",
+      "full": {
+        "success_score": 0.95,
+        "overlap_score": 0.44,
+        "method": "offline_visibility_proxy"
+      },
+      "masked": {
+        "success_score": 0.4,
+        "overlap_score": 0.4,
+        "method": "offline_visibility_proxy"
+      },
+      "success_delta": 0.55
+    }
+  ]
+}

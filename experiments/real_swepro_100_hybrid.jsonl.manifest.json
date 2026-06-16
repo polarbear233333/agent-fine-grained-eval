@@ -1,0 +1,848 @@
+{
+  "schema_version": "pcu-bench-manifest-v1",
+  "created_at": "2026-06-15T18:19:12.773588+00:00",
+  "command": "python scripts/convert_real_swe.py",
+  "config": {
+    "dataset": "swepro",
+    "hf_name": null,
+    "split": "test",
+    "track": "A",
+    "output": "experiments\\real_swepro_100_hybrid.jsonl",
+    "max_cases": 100,
+    "max_visible_tokens": 8192,
+    "memory_slots": 8,
+    "pcu_mode": "hybrid",
+    "pcu_model": "gpt-5.4-mini",
+    "seed": 42
+  },
+  "git_commit": "85e4b1fc5e8bce6c8851676fc88265ef4127d175",
+  "platform": {
+    "python": "3.12.7",
+    "system": "Windows",
+    "release": "11"
+  },
+  "prompt_versions": {
+    "pcu": "llm-pcu-v1"
+  },
+  "artifacts": [
+    {
+      "name": "converted_dataset",
+      "path": "experiments\\real_swepro_100_hybrid.jsonl",
+      "sha256": "02955716fed267dba14080855b3771a071392888756c9ecf9f4b740525e3bbba",
+      "bytes": 4328556
+    }
+  ],
+  "api_calls": [
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_06c77b3561cd516c016a3034d0b7fc8196a97f6cf89c2c998e",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_NodeBB__NodeBB-04998908ba6721d64eba79ae3b65a351dcfbc5b5-vnan",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_07ae50ce68ab799a016a3034e9bf7c819b8a964d8cc00afb41",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_qutebrowser__qutebrowser-f91ace96223cac8161c16dd061907e138fe85111-v059c6fdc75567943479b23ebca7c07b5e9a7f34c",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0cec7548b701518e016a3034f76c6c8191b8044aa9f3673388",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_NodeBB__NodeBB-51d8f3b195bddb13a13ddc0de110722774d9bb1b-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0acd64c1cf8d6417016a30352664f0819b8e2bccdfcf3c1a60",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_qutebrowser__qutebrowser-c580ebf0801e5a3ecabc54f327498bb753c6d5f2-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0eb2806412857157016a303534c6d88199bbcf989a878c62ca",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_ansible__ansible-f327e65d11bb905ed9f15996024f857a95592629-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0687bb1f81500e89016a303540536c81938bdf893d1cd57158",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_ansible__ansible-a26c325bd8f6e2822d9d7e62f77a424c1db4fbf6-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_073c97e71a799c9f016a30354d8258819b9940d0babfbddde1",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_internetarchive__openlibrary-4a5d2a7d24c9e4c11d3069220c0685b736d5ecde-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0de0a716b88914fc016a30355b03a88198b53e3c55a4eb71ab",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_qutebrowser__qutebrowser-f631cd4422744160d9dcf7a0455da532ce973315-v35616345bb8052ea303186706cec663146f0f184",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_03e6b7f9075956a0016a30358e46108199bf67fdd3295aea0e",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_gravitational__teleport-3fa6904377c006497169945428e8197158667910-v626ec2a48416b10a88641359a169d99e935ff037",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0fe6e14370ffe28e016a3035a7be188191995b407802c82ec6",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_02acef9f32024ea9016a3035b784c0819a9ececb0ca8f923f4",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_navidrome__navidrome-7073d18b54da7e53274d11c9e2baef1242e8769e",
+      "attempt": 2
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_03395ea10b528b71016a3035c6b1f88193878c5a755faad83f",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_internetarchive__openlibrary-dbbd9d539c6d4fd45d5be9662aa19b6d664b5137-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0414cb2edb81720b016a3035e338008199aaccd960becd9a33",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_ansible__ansible-395e5e20fab9cad517243372fa3c3c5d9e09ab2a-v7eee2454f617569fd6889f2211f75bc02a35f9f8",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_00eb3a83aaadceae016a3036010840819a932f8a84eda5525b",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_gravitational__teleport-c782838c3a174fdff80cafd8cd3b1aa4dae8beb2",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_09975a952c8cd027016a30363125748199aa67fccf9143c661",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_qutebrowser__qutebrowser-96b997802e942937e81d2b8a32d08f00d3f4bc4e-v5fc38aaf22415ab0b70567368332beee7955b367",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_050a1f9ea05475b4016a303641c02c819983b0742f84456a15",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_element-hq__element-web-33e8edb3d508d6eefb354819ca693b7accc695e7",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_03f8ad7229312110016a30366c4e9c8190a52e88a028067917",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_future-architect__vuls-407407d306e9431d6aa0ab566baa6e44e5ba2904",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_06b29a8a4e78e71f016a3036bbee60819ba61f4842b0752383",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_internetarchive__openlibrary-111347e9583372e8ef91c82e0612ea437ae3a9c9-v2d9a6c849c60ed19fd0858ce9e40b7cc8e097e59",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_087d140d783d415b016a3036d91f44819b8c9eb7cb721a31da",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_future-architect__vuls-e6c0da61324a0c04026ffd1c031436ee2be9503a",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_07b500ce0b51d4b1016a3037396208819ab64f68625df55c5e",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_gravitational__teleport-6eaaf3a27e64f4ef4ef855bd35d7ec338cf17460-v626ec2a48416b10a88641359a169d99e935ff037",
+      "attempt": 2
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_091ec92249dff353016a3037614c348195bf77081f7ad3f027",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_02da91affad7daa0016a30377694848193a38c12853cf4bd4c",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_gravitational__teleport-e6d86299a855687b21970504fbf06f52a8f80c74-vce94f93ad1030e3136852817f2423c1b3ac37bc4",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_055d9d0b4f106fcf016a30379d8e048195887bdfcbe6c997c6",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_internetarchive__openlibrary-8a5a63af6e0be406aa6c8c9b6d5f28b2f1b6af5a-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_02de327d77bb68be016a3037b93f508194823fdd6bbe72002d",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_navidrome__navidrome-b65e76293a917ee2dfc5d4b373b1c62e054d0dca",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0bce387f4062d810016a30380116fc81968a7029c3273e333b",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_internetarchive__openlibrary-25858f9f0c165df25742acf8309ce909773f0cdd-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0dc586406034f9fa016a30383f64f08197bed4b4fdbc5e8637",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_element-hq__element-web-5dfde12c1c1c0b6e48f17e3405468593e39d9492-vnan",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_08e62b4cf58aed6c016a3038599c5481949755c4cbea19bd8f",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_protonmail__webclients-2c3559cad02d1090985dba7e8eb5a129144d9811",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0b7d2563a69e31c1016a30387587b48193b9c09fbdf73484b2",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_NodeBB__NodeBB-397835a05a8e2897324e566b41c5e616e172b4af-v89631a1cdb318276acb48860c5d78077211397c6",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0bbfbacb0da7541a016a3038860e10819899d9794d5c657079",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_flipt-io__flipt-e42da21a07a5ae35835ec54f74004ebd58713874",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0e9fdb5d6a800a26016a303897e0248195beaf995d0c93cc00",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_flipt-io__flipt-3b2c25ee8a3ac247c3fad13ad8d64ace34ec8ee7",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_03aef856df49c3be016a3038b44f44819094329649d7dc4f9d",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_NodeBB__NodeBB-a5afad27e52fd336163063ba40dcadc80233ae10-vd59a5728dfc977f44533186ace531248c2917516",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0f8b9a777b9da040016a3038cd204881909b5a49eeef3bfe57",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_gravitational__teleport-eefac60a350930e5f295f94a2d55b94c1988c04e-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0d2cf0952d4700f8016a3038e0f66c81969b95aaa7566ab80e",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_NodeBB__NodeBB-f9ce92df988db7c1ae55d9ef96d247d27478bc70-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0607c053e0c23c74016a3038eef85081949af8266585af0706",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_navidrome__navidrome-8e640bb8580affb7e0ea6225c0bbe240186b6b08",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_019eb650a2457dd3016a303900615c8195a3dcb94af496acf2",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_future-architect__vuls-2c84be80b65d022c262956cd26fc79d8bb2f7010",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0d1e39ffbc126940016a30390fc68c8190a9d55821321de3cf",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_flipt-io__flipt-c12967bc73fdf02054cf3ef8498c05e25f0a18c0",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_04b6a33757516d2f016a30392994a48190be919e8a59c6f8e3",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_qutebrowser__qutebrowser-0fc6d1109d041c69a68a896db87cf1b8c194cef7-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0e4234fb5b89c627016a303946915481948cf0b747c89b30fe",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_ansible__ansible-b748edea457a4576847a10275678127895d2f02f-v1055803c3a812189a1133297f7f5468579283f86",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0d6601b0ff7f652f016a30395717c48198b53ec15345aa110a",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_gravitational__teleport-0ac7334939981cf85b9591ac295c3816954e287e",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_03bab5555f6a18e9016a3039716dec8190b1548c3b41930b64",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_gravitational__teleport-b5d8169fc0a5e43fee2616c905c6d32164654dc6",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_076c563d463e8bc9016a303983ac4881939de6ea4d7dcdf0e3",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_future-architect__vuls-86b60e1478e44d28b1aff6b9ac7e95ceb05bc5fc",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_07ecf688750dfea0016a3039a0cb048194a825c605bfdc907c",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_qutebrowser__qutebrowser-70248f256f93ed9b1984494d0a1a919ddd774892-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_05f4036df63b833c016a3039bf6e70819598a46218feaea01a",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_protonmail__webclients-6dcf0d0b0f7965ad94be3f84971afeb437f25b02",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_002d78a149026271016a3039e4a6548196985448cdf7638a26",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_ansible__ansible-e40889e7112ae00a21a2c74312b330e67a766cc0-v1055803c3a812189a1133297f7f5468579283f86",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_015b9d2e220ee9b3016a303a10f32c8196ac2f85dd7844729e",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_navidrome__navidrome-27875ba2dd1673ddf8affca526b0664c12c3b98b",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0780e8c5ea3990f5016a303a27d57881909a6308171eb6c176",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_internetarchive__openlibrary-11838fad1028672eb975c79d8984f03348500173-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_09baf8271e408fc3016a303a6426548199a2f29f8c36f4c0aa",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_ansible__ansible-5e369604e1930b1a2e071fecd7ec5276ebd12cb1-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_06e4de25f2a5f925016a303a8123e08195a5634f103578b699",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_element-hq__element-web-72a8f8f03b1a01bb70ef8a5bb61759416991b32c-vnan",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0b8ba6cd3148316e016a303a927e488193b88153c73d4e7af4",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_internetarchive__openlibrary-b4f7c185ae5f1824ac7f3a18e8adf6a4b468459c-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_090148e847ee5e7f016a303aab2e688196b3267660e3016765",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_gravitational__teleport-3ff75e29fb2153a2637fe7f83e49dc04b1c99c9f",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0c85cbe862e8a3c8016a303abd3d30819585fcbd819ae22e69",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_flipt-io__flipt-f808b4dd6e36b9dc8b011eb26b196f4e2cc64c41",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_048c4a7fb994885c016a303aeacc648196ba0c6d86312adc80",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_future-architect__vuls-5af1a227339e46c7abf3f2815e4c636a0c01098e",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_07db4f841b8da770016a303b0c6d908195a4b8ee1b69772aa2",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_element-hq__element-web-5e8488c2838ff4268f39db4a8cca7d74eecf5a7e-vnan",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_00678df25e0fce6f016a303b1da5308196ab17206a1dbf35b3",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_ansible__ansible-be59caa59bf47ca78a4760eb7ff38568372a8260-v1055803c3a812189a1133297f7f5468579283f86",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_08ddba3d1cae350d016a303b3fce94819681c13fd6b4eefc6e",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_protonmail__webclients-08bb09914d0d37b0cd6376d4cab5b77728a43e7b",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0ecf32383adac411016a303b57ec1c819a94e3bccccc524978",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_ansible__ansible-b5e0293645570f3f404ad1dbbe5f006956ada0df-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_004b453a0e621555016a303b7b1f0c8197bfec94c68cc5e5e1",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_internetarchive__openlibrary-00bec1e7c8f3272c469a58e1377df03f955ed478-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0b3c886bf1f3bd0a016a303b8e1e408196a34c64e6adf47f1a",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_flipt-io__flipt-756f00f79ba8abf9fe53f3c6c818123b42eb7355",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_054ae7d7e8a75c8d016a303ba7c29881949d7ee663c2fe41a2",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_internetarchive__openlibrary-5069b09e5f64428dce59b33455c8bb17fe577070-v8717e18970bcdc4e0d2cea3b1527752b21e74866",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0ce0d85026c8ed0c016a303bbaffdc81909ea60271b85a2a71",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_element-hq__element-web-41dfec20bfe9b62cddbbbf621bef2e9aa9685157-vnan",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_06aa80aca7500f45016a303bc82e04819499097214ba2699a3",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_flipt-io__flipt-b3cd920bbb25e01fdb2dab66a5a913363bc62f6c",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_00040d90f03a2a4b016a303be1795c81979ce263a0ec42b1ea",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_navidrome__navidrome-8d56ec898e776e7e53e352cb9b25677975787ffc",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0082b9584691bf41016a303bf3d68c819099da06d21cc4fb2f",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_internetarchive__openlibrary-5c6c22f3d2edf2f1b10f5dc335e32cb6a5f40341-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_07de78251f25d826016a303c00eef8819bacb7bfcd5458d5b3",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_ansible__ansible-1b70260d5aa2f6c9782fd2b848e8d16566e50d85-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0a93b5553fb140cc016a303c5ac580819a936f3b7be0d8aa82",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_element-hq__element-web-404c412bcb694f04ba0c4d5479541203d701bca0-vnan",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0fd99b4ce63c6008016a303c6a3ca88198ac4e2cf84ea0102a",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_01b144d5b2fb94ac016a303c884e7c8190b34d2ec776e53ff9",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_qutebrowser__qutebrowser-473a15f7908f2bb6d670b0e908ab34a28d8cf7e2-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0a35befb4eb8a538016a303c9d199c819994393a568d510511",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_element-hq__element-web-a692fe21811f88d92e8f7047fc615e4f1f986b0f-vnan",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0e153ee9f1279566016a303cabe920819892d1cee3216c39d9",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_flipt-io__flipt-84806a178447e766380cc66b14dee9c6eeb534f4",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0a90e16afab2e98a016a303ccb52f08199a11562331c1559d0",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_gravitational__teleport-b8fbb2d1e90ffcde88ed5fe9920015c1be075788-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0430893d47bc987c016a303cf9915881979d59d2026fe26182",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_element-hq__element-web-75c2c1a572fa45d1ea1d1a96e9e36e303332ecaa-vnan",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_080ec224b5c74efa016a303d0be5cc819a9d4704b5f60e2051",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_future-architect__vuls-0ec945d0510cdebf92cdd8999f94610772689f14",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0fa02819b1cd44a1016a303d33cc6081989abae24741dcec63",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_ansible__ansible-f86c58e2d235d8b96029d102c71ee2dfafd57997-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0236745c6d86f695016a303d4d1c2c819995870dd1c41347e6",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_NodeBB__NodeBB-f48ed3658aab7be0f1165d4c1f89af48d7865189-v0495b863a912fbff5749c67e860612b91825407c",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0efd919fe08bc16e016a303d672e38819aa41c540c3860e645",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_qutebrowser__qutebrowser-f7753550f2c1dcb2348e4779fd5287166754827e-v059c6fdc75567943479b23ebca7c07b5e9a7f34c",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_04ba76db292101f0016a303d7d4078819498e1a764e8084f39",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_future-architect__vuls-8d5ea98e50cf616847f4e5a2df300395d1f719e9",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0449021146f63fa1016a303d980378819bb6d22d2cfd9f8cf5",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_flipt-io__flipt-e50808c03e4b9d25a6a78af9c61a3b1616ea356b",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0c2dcd44ddfdf949016a303db47590819abf18b07dc775baae",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_gravitational__teleport-2be514d3c33b0ae9188e11ac9975485c853d98bb-vce94f93ad1030e3136852817f2423c1b3ac37bc4",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0f8d42b54dd3fee5016a303dcfbf34819ab59c8b36f73bac32",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_future-architect__vuls-be7b9114cc9545e68fb0ee7bc63d7ec53d1a00ad",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0eb189a341354ef0016a303ddecb0c819b98203ee1bc07ee53",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_internetarchive__openlibrary-f8cc11d9c1575fdba5ac66aee0befca970da8d64-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0a1eb0cb82632567016a303defb32c8193a95ce5a7a0804a7f",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_future-architect__vuls-e52fa8d6ed1d23e36f2a86e5d3efe9aa057a1b0d",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_00b566d07eb2e006016a303e09efa08199a7117e5b212b1420",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_ansible__ansible-e64c6c1ca50d7d26a8e7747d8eb87642e767cd74-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_05da6749c6838f8b016a303e18695481998eb2dacd099c7f32",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_internetarchive__openlibrary-1351c59fd43689753de1fca32c78d539a116ffc1-v29f82c9cf21d57b242f8d8b0e541525d259e2d63",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_09303ba79d5b53aa016a303e320fa08198a0ecc9d1b899fb0b",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_element-hq__element-web-2760bfc8369f1bee640d6d7a7e910783143d4c5f-vnan",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0278989c52861e43016a303e59dfa4819ab17a8a00b4182586",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_tutao__tutanota-da4edb7375c10f47f4ed3860a591c5e6557f7b5c-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0fd7e40bcc8ef3f4016a303e6e9fe481958785febe9bf0de56",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_element-hq__element-web-1077729a19c0ce902e713cf6fab42c91fb7907f1-vnan",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0aa4b52d12387dbc016a303e862b1c819884796ae983316069",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_element-hq__element-web-71fe08ea0f159ccb707904d87f0a4aef205a167c-vnan",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0351a303b2d53ee5016a3040725398819888af4357b8f63793",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_tutao__tutanota-09c2776c0fce3db5c6e18da92b5a45dce9f013aa-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_097d47f6ec706512016a3040903cdc819ba21fa0019fddf3e1",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_navidrome__navidrome-97434c1789a6444b30aae5ff5aa124a96a88f504",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_01a92709fadf1669016a3040a89bb881908bf7601893836786",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_qutebrowser__qutebrowser-85b867fe8d4378c8e371f055c70452f546055854-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_09e8808b2bdca6e4016a3040d08b68819ab02cc6781083e7ed",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_gravitational__teleport-1a77b7945a022ab86858029d30ac7ad0d5239d00-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_07070e2cd570a616016a3040deafc8819ba3378b82628644b4",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_qutebrowser__qutebrowser-e64622cd2df5b521342cf4a62e0d4cb8f8c9ae5a-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_00bf9c062bf7be59016a3040fa56788198aecdc79f6e52ef69",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_flipt-io__flipt-b22f5f02e40b225b6b93fff472914973422e97c6",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0ffca146ee44dc3c016a304119b0a08193bd996240e0b8dd47",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_element-hq__element-web-f0359a5c180b8fec4329c77adcf967c8d3b7b787-vnan",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_01c9a4a4867d4cca016a30414cc1f48198a41e753727773698",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_protonmail__webclients-09fcf0dbdb87fa4f4a27700800ee4a3caed8b413",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0cc45fbeb0f412d3016a3041682bc081999ce70dbbf1cc4bcf",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_navidrome__navidrome-5001518260732e36d9a42fb8d4c054b28afab310",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_02ec7ad31bddb58a016a30417a189c819a8a3ec9af15bbdbab",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_ansible__ansible-12734fa21c08a0ce8c84e533abdc560db2eb1955-v7eee2454f617569fd6889f2211f75bc02a35f9f8",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_08057d6e21e25c34016a30418b1b008198828ce11b54d80629",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_navidrome__navidrome-fa85e2a7816a6fe3829a4c0d8e893e982b0985da",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_0b3cc1e860914099016a30419da9a4819b96ce960139c54e20",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_NodeBB__NodeBB-2657804c1fb6b84dc76ad3b18ecf061aaab5f29f-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_029db898eb80b1ae016a3041c1df04819bb06a3ac7b766ad15",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_ansible__ansible-0fd88717c953b92ed8a50495d55e630eb5d59166-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+      "attempt": 1
+    },
+    {
+      "kind": "pcu_annotation",
+      "model": "gpt-5.4-mini",
+      "response_id": "resp_06b9d2f89016eb85016a3041d479f8819bbdc48916a260a8c4",
+      "prompt_version": "llm-pcu-v1",
+      "instance_id": "instance_future-architect__vuls-6eff6a9329a65cc412e79b8f82444dfa3d0f0b5a",
+      "attempt": 1
+    }
+  ],
+  "notes": [
+    "Patch context sources are oracle-only and marked visible_to_agent=false."
+  ]
+}

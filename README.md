@@ -1,44 +1,38 @@
 # PCU Context Engineering Benchmark
 
-This repository is a research harness for evaluating context engineering in software-engineering agents. It extends a SWE-bench-style patch-and-test workflow with explicit measurement of:
+This repository is a research system for evaluating context engineering in software-engineering LLM agents. It builds on SWE-bench-style tasks, but the central object is not only whether the final patch passes tests. The benchmark also measures whether an agent can identify, preserve, compress, recall, and use the information that causally matters for the patch.
 
-- Context Budgeting: what the agent keeps, summarizes, or discards under a visible-token budget.
-- Information Retention: whether task-critical facts survive long multi-turn interaction.
-- Actionable Recall: whether retained facts causally affect the final patch or repair decision.
-- Task Decomposition: whether the agent plans and executes a reasonable engineering workflow.
+The current system supports:
 
-The current implementation is designed as a first paper-grade pipeline: modular, reproducible, JSONL-native, and safe to run in offline smoke mode before attaching costly model or SWE-bench execution backends.
+- real SWE-bench Verified conversion
+- real SWE-Pro conversion
+- LLM-assisted Patch Causal Unit construction
+- multi-turn context-stress scripts
+- explicit memory and context-budget simulation
+- JSONL trajectory logging
+- cross-model Track A/C experiments
+- Full Context vs Masked PCU ablation records
+- artifact manifests with checksums, prompt versions, model ids, and API response ids
 
-## Design Background
+## Research Question
 
-SWE-bench evaluates whether a model can resolve real GitHub issues by generating patches against pinned repositories. The public SWE-bench site reports the family of benchmark splits, including Full, Lite, Verified, Multilingual, and Multimodal; Verified is a 500-instance human-filtered subset. The official SWE-bench repository documents the patch evaluation harness and its Docker-based reproducibility requirements.
+Modern coding agents fail not only because they cannot write code, but because they mishandle context. They keep noisy logs, forget early constraints, over-retain irrelevant files, or fail to connect a remembered fact to the final patch.
 
-SWE-bench Pro pushes toward longer-horizon, more realistic agent tasks. Public descriptions report 1,865 problems across 41 repositories, with public, held-out, and commercial subsets, and emphasize multi-file, enterprise-like tasks that remain substantially harder than SWE-bench Verified.
+This benchmark studies three capabilities:
 
-This project keeps the SWE-bench idea of "issue + repository + patch + tests", but adds a benchmark layer for context decisions and memory. It can ingest SWE-style JSONL, Hugging Face SWE-bench datasets, and existing agent trajectory JSONL.
+1. Context Budgeting: under a token budget, what does the agent keep, summarize, or discard?
+2. Information Retention: do critical facts survive multi-turn interaction and interference?
+3. Actionable Recall: does retained information affect the final repair behavior?
 
-References:
+Task decomposition is evaluated as a complementary capability: whether the agent plans, localizes, modifies, verifies, and revises in a structured way.
 
-- SWE-bench website: https://www.swebench.com/
-- SWE-bench GitHub: https://github.com/SWE-bench/SWE-bench
-- SWE-bench Pro public dataset page: https://labs.scale.com/leaderboard/swe_bench_pro_public
-- SWE-bench Pro repository: https://github.com/scaleapi/SWE-bench_Pro-os
+## Patch Causal Unit
 
-## Core Concept: Patch Causal Unit
+A Patch Causal Unit, or PCU, is a minimal information unit with causal relevance to the correct patch:
 
-A Patch Causal Unit (PCU) is a minimal causal information unit:
+> If the agent does not know or use this information, it is unlikely to generate a patch equivalent to the gold repair.
 
-> If the agent does not know or use this information, it is unlikely to generate a correct patch that passes the task tests.
-
-PCUs can be extracted from:
-
-- issue constraints and acceptance criteria
-- failure logs and key test errors
-- tests or regression assertions
-- gold patch semantics
-- long interaction logs containing buried task triggers
-
-The required public PCU shape is:
+Required public schema:
 
 ```json
 {
@@ -51,86 +45,58 @@ The required public PCU shape is:
       "end": 160
     }
   ],
-  "expected_patch_effect": "The semantic repair behavior affected by this information."
+  "expected_patch_effect": "The semantic repair behavior controlled by this information."
 }
 ```
 
-The internal schema also stores optional `ref_id`, `description`, `importance`, and `ablation` metadata so experiments can trace a PCU back to exact context sources.
+Internal records also keep `ref_id`, `description`, `importance`, and ablation metadata so every PCU can be traced to exact source text.
 
-### Necessity
+### Hard vs Soft
 
-- Hard PCU: missing the unit should sharply reduce patch success.
-- Soft PCU: missing the unit may still pass tests but makes the repair weaker, less robust, or less aligned with edge cases.
+- Hard PCU: removing it should sharply reduce the chance of producing the correct patch.
+- Soft PCU: useful for robustness, edge cases, style, or patch quality, but not always strictly necessary.
 
-The PCU engine exposes direct ablation:
+The repository now includes a first ablation runner for Full Context vs Masked PCU. Proxy modes are available today; the interface is designed so true Dockerized SWE pass/fail can be plugged in later.
 
-1. Full Context: solve with all context sources.
-2. Masked Context: remove the candidate PCU span.
-3. Compare pass rates.
-4. Use the success delta to classify hard vs. soft.
+## PCU Construction
 
-Offline dataset construction uses a deterministic proxy ablation so the pipeline is reproducible without burning model budget. Replace the solver callback in `PCUEngine.validate_with_ablation()` for final paper experiments.
+PCUs are not fixed templates. They are generated per case.
 
-## Modules
+For each SWE/SWE-Pro instance, the system first builds:
 
-The benchmark is split into the requested research modules.
+```text
+context_sources:
+  issue
+  discussion
+  logs
+  tests
+  snippets
+  patch      # oracle-only; visible_to_agent=false
+```
 
-### `dataset_builder`
+Then it supports three PCU modes:
 
-File: `src/agent_eval/dataset_builder.py`
+```text
+heuristic  deterministic bootstrap extractor
+llm        model-generated case-specific PCUs
+hybrid     LLM PCUs plus non-duplicate patch-oracle soft PCUs
+```
 
-Converts SWE-bench/SWE-Pro/local trajectory cases into benchmark instances containing:
+In LLM and hybrid modes, the model receives the case context and returns PCUs with `evidence_quote`. The script then grounds each quote back to the original source text and computes exact character offsets. The model is not trusted to invent offsets.
 
-- `context_sources`
-- `interaction_script`
-- `pcus`
-- `context_budget`
+Example difference:
 
-It builds 6-12 turn scripts with:
+- Astropy separability case: PCUs involve nested CompoundModels and expected separability matrices.
+- NodeBB email validation case: PCUs involve ACP email status, fallback email lookup, and confirmation expiry semantics.
 
-- noise suggestions
-- conflicting low-confidence hints
-- long diagnostic logs with buried signals
-- pseudo-related paths and snippets
-- delayed PCU checkpoints
+Detailed construction notes are in [docs/pcu_construction.md](docs/pcu_construction.md).
+Full Context vs Masked PCU ablation details are in [docs/ablation_runner.md](docs/ablation_runner.md).
 
-It supports:
+## Tracks
 
-- local SWE-style JSONL
-- existing trajectory JSONL with `sample_name`, `messages`, and `success`
-- Hugging Face SWE-bench family datasets when `datasets` is installed
+### Track A: Context Management
 
-### `pcu_engine`
-
-File: `src/agent_eval/pcu_engine.py`
-
-Extracts PCUs from issue/log/test/patch sources and records span-level evidence. It implements:
-
-- issue constraint extraction
-- log/test signal extraction
-- gold patch semantic extraction
-- hard/soft classification
-- offline proxy ablation
-- real direct-solve ablation hook
-
-Trajectory observations are treated conservatively: logs produced by a prior agent run are low-confidence unless direct ablation or stronger task evidence validates them.
-
-### `context_manager`
-
-File: `src/agent_eval/context_manager.py`
-
-Simulates realistic agent memory:
-
-- `max_visible_tokens`
-- `memory_slots`
-- `keep`
-- `summarize`
-- `discard`
-- memory eviction
-- forgetting events
-- budget overflow accounting
-
-Agent output format:
+The agent only outputs a context plan:
 
 ```json
 {
@@ -141,281 +107,256 @@ Agent output format:
 }
 ```
 
-The manager executes the plan, updates the memory buffer, and returns the visible context state used for scoring.
+No patch is required. This isolates context budgeting and PCU retention.
 
-### `swe_bench_runner`
+### Track B: Budgeted Patch
 
-File: `src/agent_eval/swe_bench_runner.py`
-
-Provides a minimal local execution boundary:
-
-- clone repo
-- checkout commit
-- apply patch
-- run tests
-- collect pass/fail, logs, and diff
-- remove temporary worktree by default
-
-Track B/C default to `--runner-mode skip` so smoke runs do not clone large repos or leave worktrees. Use `--runner-mode local` only when the repository, commit, dependencies, and test command are ready.
-
-### `trajectory_logger`
-
-File: `src/agent_eval/trajectory_logger.py`
-
-Writes JSONL events:
-
-- `case_start`
-- `agent_output`
-- `context_state`
-- `swe_runner`
-- `metrics`
-- `task_decomposition`
-
-The canonical output is:
-
-```text
-experiments/
-  run_xxx/
-    config.json
-    converted_dataset.jsonl
-    dataset_analysis.json
-    trajectories.jsonl
-    metrics.json
-    summary.md
-```
-
-### `evaluation_engine`
-
-File: `src/agent_eval/evaluation_engine.py`
-
-Implements benchmark metrics:
-
-- Task Success
-- PCU Recall@K
-- Hard PCU Recall
-- Soft PCU Recall
-- PCU-to-Patch Alignment
-- Context Bloat Ratio
-- Retrieval Cost
-- Delayed PCU Recall
-- Forgetting Events
-- Conflict Resolution Accuracy
-
-Metric definitions:
-
-```text
-Task Success = 1 if tests pass, else 0
-PCU Recall@K = covered top-K PCUs / K
-Hard PCU Recall = covered hard PCUs / total hard PCUs
-Soft PCU Recall = covered soft PCUs / total soft PCUs
-CBR = retained visible tokens / minimal tokens covering hard PCU spans
-Retrieval Cost = sum(action cost + retrieved token cost)
-Delayed PCU Recall = recall of PCUs introduced before a delayed checkpoint
-Forgetting Events = PCUs removed from memory after being stored
-Conflict Resolution Accuracy = whether stronger PCU evidence overrides conflicting noise
-PCU-to-Patch Alignment = hard PCUs whose expected patch effect appears in the final diff
-```
-
-### `task_decomposition_eval`
-
-File: `src/agent_eval/task_decomposition_eval.py`
-
-Wraps the existing `td_pipeline` slice extractor and heuristic judge. It implements the paper rubric:
-
-- 0: no planning
-- 1: weak planning
-- 2: partial planning
-- 3: standard engineering planning
-- 4: systematic planning
-- 5: advanced dynamic planning
-
-Aggregate formulas:
-
-```text
-PQS = average slice score
-PAR = aligned plan steps / executed steps
-PRQ = reasonable plan revisions / total revisions
-EE = execution efficiency
-Final TD Score = 0.4 * PQS_normalized + 0.3 * PAR + 0.2 * PRQ + 0.1 * EE
-```
-
-## Tracks
-
-### Track A: Pure Context Management
-
-The agent only returns `context_plan`. No patch is required.
-
-Use this to isolate budgeting, retention, and memory behavior.
-
-### Track B: SWE-bench + Token Budget
-
-The agent must manage context and produce a patch. If `--runner-mode local` is enabled, the runner applies the patch and executes tests.
-
-Use this to test whether context management improves actual task success.
+The agent must manage context and produce a patch. If `--runner-mode local` is enabled, the patch is applied and tests are run. If runner mode is skipped, `task_success` remains `null`.
 
 ### Track C: Long-Horizon Interference
 
-Track B plus stronger long-horizon stressors:
+Track B plus:
 
 - delayed PCUs
 - conflicting hints
-- long logs
+- long noisy logs
 - distractor files
 - memory stability checks
 
-Use this to study forgetting and conflict resolution.
+## Repository Layout
+
+```text
+src/agent_eval/
+  schema.py                  benchmark, PCU, memory, metrics schemas
+  dataset_builder.py         local/SWE/SWE-Pro to benchmark JSONL
+  pcu_engine.py              heuristic PCU extraction and ablation hook
+  llm_pcu_engine.py          LLM PCU annotation and quote grounding
+  context_manager.py         keep/summarize/discard/memory execution
+  evaluation_engine.py       PCU recall, CBR, delayed recall, alignment
+  ablation_runner.py         Full Context vs Masked PCU runner
+  swe_bench_runner.py        minimal clone/apply/test boundary
+  task_decomposition_eval.py planning slice and PQS/PAR/PRQ/EE wrapper
+  trajectory_logger.py       JSONL event logging
+  manifest.py                checksums, prompt versions, response ids
+  agents.py                  heuristic and OpenAI-compatible agents
+
+scripts/
+  build_benchmark_dataset.py
+  convert_real_swe.py
+  run_ablation.py
+```
 
 ## Installation
 
 ```bash
 python -m venv .venv
 .venv\Scripts\Activate.ps1
-pip install -e .
+pip install -e ".[dev,swebench]"
 ```
 
-For Hugging Face SWE-bench loading:
+The project also works without installation when run from the repository root because scripts add `src/` to `PYTHONPATH`.
+
+For OpenAI-compatible model calls:
+
+```powershell
+$env:OPENAI_API_KEY="..."
+$env:API_BASE="https://4router.net/v1"
+```
+
+Supported base URL variables are checked in this order:
+
+```text
+OPENAI_BASE_URL
+API_BASE
+JUDGE_BASE_URL
+```
+
+## Convert Real SWE Data
+
+SWE-bench Verified:
 
 ```bash
-pip install -e ".[swebench]"
+python scripts/convert_real_swe.py ^
+  --dataset swebench_verified ^
+  --split test ^
+  --track A ^
+  --output experiments\real_swe_verified_10_hybrid.jsonl ^
+  --max-cases 10 ^
+  --pcu-mode hybrid ^
+  --pcu-model gpt-5.4-mini
 ```
 
-For tests:
+SWE-Pro:
 
 ```bash
-pip install -e ".[dev]"
-pytest
+python scripts/convert_real_swe.py ^
+  --dataset swepro ^
+  --split test ^
+  --track A ^
+  --output experiments\real_swepro_100_hybrid.jsonl ^
+  --max-cases 100 ^
+  --pcu-mode hybrid ^
+  --pcu-model gpt-5.4-mini
 ```
 
-## CLI
+Data aliases:
 
-Required entry point:
+| alias | Hugging Face dataset |
+|---|---|
+| `swebench` | `SWE-bench/SWE-bench` |
+| `swebench_lite` | `SWE-bench/SWE-bench_Lite` |
+| `swebench_verified` | `SWE-bench/SWE-bench_Verified` |
+| `swepro` | `ScaleAI/SWE-bench_Pro` |
 
-```bash
-python run.py --track A --model gpt-4.1 --dataset swebench
+Every conversion writes a sidecar manifest:
+
+```text
+<output>.manifest.json
 ```
 
-Offline local trajectory smoke run:
+The manifest records:
+
+- dataset/config
+- output checksum
+- prompt version
+- model used for PCU annotation
+- API response ids
+- artifact sizes
+- git commit and platform
+
+## Run Context Experiments
+
+Track A with a model:
 
 ```bash
 python run.py ^
   --track A ^
-  --model heuristic ^
+  --model gpt-5.5 ^
+  --agent-provider openai_compatible ^
   --dataset trajectories ^
   --input data\glm-think-claude_1_it1_final_data.json ^
   --max-cases 50 ^
-  --run-name local_50_track_a
+  --run-name router_50_track_a_gpt-5.5
 ```
 
-Long-horizon dataset construction only:
-
-```bash
-python scripts/build_benchmark_dataset.py ^
-  --track C ^
-  --dataset trajectories ^
-  --input data\glm-think-claude_1_it1_final_data.json ^
-  --output experiments\track_c_dataset.jsonl ^
-  --max-cases 50
-```
-
-Track B with local patch execution:
+Track C stress sample:
 
 ```bash
 python run.py ^
-  --track B ^
-  --model gpt-4.1 ^
+  --track C ^
+  --model gpt-5.5 ^
   --agent-provider openai_compatible ^
-  --dataset swebench_verified ^
+  --dataset trajectories ^
+  --input data\glm-think-claude_1_it1_final_data.json ^
   --max-cases 10 ^
-  --runner-mode local ^
-  --test-command "python -m pytest"
+  --run-name track_c_10_gpt-5.5
 ```
 
-The OpenAI-compatible agent uses `OPENAI_API_KEY` or `JUDGE_API_KEY`. For custom routers, set `OPENAI_BASE_URL`, `API_BASE`, or `JUDGE_BASE_URL`; they are checked in that order.
+Run outputs:
 
-## Data Format
-
-SWE-style input:
-
-```json
-{
-  "instance_id": "django__django-11119",
-  "repo": "django/django",
-  "base_commit": "abc123",
-  "problem_statement": "Bug report...",
-  "hints_text": "Optional discussion...",
-  "patch": "diff --git ...",
-  "test_patch": "diff --git ..."
-}
+```text
+experiments/run_xxx/
+  config.json
+  converted_dataset.jsonl
+  dataset_analysis.json
+  trajectories.jsonl
+  metrics.json
+  summary.md
+  artifact_manifest.json
 ```
 
-Trajectory input:
+## Run PCU Ablations
 
-```json
-{
-  "sample_name": "django__django-11119",
-  "messages": [
-    {"role": "system", "content": "..."},
-    {"role": "user", "content": "<pr_description>...</pr_description>"},
-    {"role": "assistant", "content": "..."},
-    {"role": "tool", "content": "..."}
-  ],
-  "success": true
-}
+Full Context vs Masked PCU proxy ablation:
+
+```bash
+python scripts/run_ablation.py ^
+  --dataset experiments\real_swepro_100_hybrid.jsonl ^
+  --output-dir experiments\ablation_swepro_100_proxy ^
+  --solver-mode proxy ^
+  --necessity hard ^
+  --max-pcus-per-case 2
 ```
 
-Converted benchmark instance:
+Small LLM proxy ablation:
 
-```json
-{
-  "benchmark_id": "pcu-context-bench-v1",
-  "instance_id": "repo__issue",
-  "track": "context_management",
-  "metadata": {},
-  "task": {},
-  "context_sources": [],
-  "interaction_script": [],
-  "pcus": [],
-  "context_budget": {},
-  "evaluation": {}
-}
+```bash
+python scripts/run_ablation.py ^
+  --dataset experiments\real_swepro_100_hybrid.jsonl ^
+  --output-dir experiments\ablation_swepro_llm_proxy_smoke ^
+  --solver-mode llm_proxy ^
+  --model gpt-5.4-mini ^
+  --max-cases 2 ^
+  --max-pcus-per-case 1 ^
+  --necessity hard
 ```
 
-## Reproducibility
+Ablation outputs:
 
-Every run writes:
+```text
+ablations.jsonl
+ablation_metrics.json
+artifact_manifest.json
+```
 
-- `config.json`: exact CLI arguments
-- `converted_dataset.jsonl`: benchmark cases generated from the source data
-- `dataset_analysis.json`: source and PCU counts
-- `trajectories.jsonl`: event-level agent and evaluator trace
-- `metrics.json`: per-case and aggregate scores
-- `summary.md`: human-readable run summary
+Important: `proxy` and `llm_proxy` are not official SWE test-pass measurements. They are infrastructure for estimating PCU importance before the Dockerized SWE harness is attached. Patch-only oracle PCUs are skipped by default because patch sources are not visible to agents.
 
-Use `--seed` to make noise injection and interaction scripts deterministic.
+## Metrics
 
-Raw trajectory files in `data/` are ignored by Git because they can be hundreds of MB. Keep them in local storage or publish them separately with a dataset artifact.
+Core metrics:
 
-## Current Status
+```text
+Task Success = tests pass, only when runner-mode local is used
+PCU Recall@K = covered top-K PCUs / K
+Hard PCU Recall = covered hard PCUs / total hard PCUs
+Soft PCU Recall = covered soft PCUs / total soft PCUs
+PCU-to-Patch Alignment = hard PCUs whose semantic effect appears in final patch
+CBR = retained visible tokens / minimal tokens covering hard PCUs
+Retrieval Cost = sum(action cost + retrieved token cost)
+Delayed PCU Recall = recall after delayed dependency checkpoints
+Forgetting Events = PCUs removed from memory after being stored
+Conflict Resolution Accuracy = whether stronger evidence overrides noise
+```
 
-Implemented:
+Task decomposition metrics:
 
-- modular PCU benchmark package under `src/agent_eval`
-- PCU extraction and ablation interface
-- context manager with token and memory constraints
-- Track A/B/C dataset construction
-- heuristic offline agent
-- optional OpenAI-compatible context-plan agent
-- local SWE runner boundary with cleanup
-- JSONL trajectory logging
-- PCU/context metrics
-- task decomposition evaluator wrapper
-- CLI and dataset builder script
-- smoke tests
+```text
+PQS = average planning quality
+PAR = aligned plan steps / executed steps
+PRQ = reasonable revisions / total revisions
+EE = execution efficiency
+Final TD Score = 0.4 * PQS + 0.3 * PAR + 0.2 * PRQ + 0.1 * EE
+```
 
-Remaining for final paper experiments:
+## Current Artifacts
 
-- replace offline proxy ablation with model-based Direct Solve ablations
-- run Dockerized SWE-bench harness for high-confidence Task Success
-- calibrate PCU labels with human review on a subset
-- report noise-level curves and confidence intervals
-- attach a fixed model/scaffold matrix for Track B/C
+Existing experiment summaries:
+
+- [experiments/model_comparison_track_a_50.md](experiments/model_comparison_track_a_50.md)
+- [experiments/model_comparison_track_c_10.md](experiments/model_comparison_track_c_10.md)
+- [experiments/real_dataset_conversion_summary.md](experiments/real_dataset_conversion_summary.md)
+
+Real converted data samples:
+
+- `experiments/real_swe_verified_10_hybrid.jsonl`
+- `experiments/real_swepro_10_hybrid.jsonl`
+- `experiments/real_swepro_100_hybrid.jsonl` when the 100-case expansion is run
+
+## Scientific Status
+
+This is now an LLM-assisted PCU benchmark construction pipeline, not just a heuristic demo. It can create case-specific PCUs for real SWE-bench and SWE-Pro tasks, ground them to spans, stress agents with long-horizon context scripts, and record reproducible manifests.
+
+Remaining work for a paper-grade benchmark:
+
+1. Human review and adjudication of LLM-generated PCUs.
+2. Direct Solve ablation with real patch generation and SWE tests.
+3. Dockerized SWE-bench harness integration for Track B/C.
+4. Budget sensitivity curves over token limits and memory slots.
+5. Confidence intervals and failure taxonomy.
+6. Frozen PCU-gold release with checksums and annotation guidelines.
+
+## Notes
+
+Raw trajectory files under `data/` are ignored because they can be hundreds of MB. Publish them as separate dataset artifacts rather than committing them to Git.
+
+If an API key has appeared in logs or chat, rotate it before publishing the repository.

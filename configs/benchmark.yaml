@@ -22,7 +22,8 @@ agent:
   model: heuristic
 
 pcu:
+  mode: heuristic
+  model: gpt-5.4-mini
   ablation_mode: offline_proxy
   hard_delta_threshold: 0.35
   soft_delta_threshold: 0.15
-

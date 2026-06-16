@@ -1,0 +1,49 @@
+{
+  "schema_version": "pcu-bench-manifest-v1",
+  "created_at": "2026-06-15T17:20:15.225860+00:00",
+  "command": "python scripts/run_ablation.py",
+  "config": {
+    "dataset_path": "experiments\\real_swepro_10_hybrid.jsonl",
+    "output_dir": "experiments\\ablation_swepro_10_proxy",
+    "solver_mode": "proxy",
+    "model": "gpt-5.4-mini",
+    "max_cases": null,
+    "max_pcus_per_case": 2,
+    "necessity": "hard",
+    "include_oracle_patch_pcus": false
+  },
+  "git_commit": "85e4b1fc5e8bce6c8851676fc88265ef4127d175",
+  "platform": {
+    "python": "3.12.7",
+    "system": "Windows",
+    "release": "11"
+  },
+  "prompt_versions": {
+    "ablation": "pcu-ablation-v1"
+  },
+  "artifacts": [
+    {
+      "name": "input_dataset",
+      "path": "experiments\\real_swepro_10_hybrid.jsonl",
+      "sha256": "daa2d3c24d1e5d35d95d2bac5732b9b9fa9cd274f570257a842b38ca3ecf19e8",
+      "bytes": 415730
+    },
+    {
+      "name": "ablations",
+      "path": "experiments\\ablation_swepro_10_proxy\\ablations.jsonl",
+      "sha256": "d8dd1a3f691701871b102f6de3e1c44d1d2a15d94779ac983c25d58832c1e23a",
+      "bytes": 11639
+    },
+    {
+      "name": "ablation_metrics",
+      "path": "experiments\\ablation_swepro_10_proxy\\ablation_metrics.json",
+      "sha256": "cfdba93780fd3df48c6e1ec8171929a0d02bf7fde3775db638acd65c29912b2c",
+      "bytes": 14808
+    }
+  ],
+  "api_calls": [],
+  "notes": [
+    "Default ablation skips oracle patch PCUs because patch sources are not visible to agents.",
+    "proxy and llm_proxy are not official SWE test-pass measurements."
+  ]
+}

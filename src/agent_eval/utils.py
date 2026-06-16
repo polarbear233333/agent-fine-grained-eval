@@ -63,6 +63,19 @@ def append_jsonl(path: str | Path, row: dict[str, Any]) -> None:
         f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
+def file_sha256(path: str | Path) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def json_sha256(obj: Any) -> str:
+    payload = json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
 def extract_pr_description(text: str) -> str:
     if not text:
         return ""
@@ -190,4 +203,3 @@ def keyword_set(text: str, max_words: int = 24) -> set[str]:
         if len(result) >= max_words:
             break
     return set(result)
-
